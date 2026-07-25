@@ -11,8 +11,12 @@ module Jekyll
 
 			all_exifdata = File.join(site.dest, output_url, "EXIFDATA.json")
 			remote_exif_url = "#{photo_baseurl}EXIFDATA.json"
+			location_map_url = ""
 			if Jekyll.configuration({})['photos']['remote_exif_url']
 				remote_exif_url = Jekyll.configuration({})['photos']['remote_exif_url']
+			end
+			if Jekyll.configuration({})['photos']['location_map_url']
+				location_map_url = Jekyll.configuration({})['photos']['location_map_url']
 			end
 
 			begin
@@ -46,6 +50,7 @@ module Jekyll
 			}
 
 			all_exif = JSON.parse(File.read(all_exifdata))
+			photo_pages = []
 
 			all_exif.each do |relative_path, exif|
 				container_dir = File.join(output_url, File.dirname(relative_path))
@@ -102,6 +107,23 @@ module Jekyll
 				photo_page.content = description
 
 				site.pages << photo_page
+				photo_pages << photo_page
+			end
+
+			begin
+				URI.open(location_map_url) do |remote|
+					site.data["location_map"] = JSON.parse(remote.read)
+				end
+			rescue => e
+				Jekyll.logger.warn "PhotoPageGenerator:", "Failed to download LOCATION map (but i don't care) (#{e.message})"
+			end
+
+			photo_pages.select! { |p| p.data["date"] }
+			photo_pages.sort_by! { |p| p.data["date"] }
+
+			photo_pages.each_with_index do |page, i|
+				page.data["previous"] = photo_pages[i - 1] if i > 0
+				page.data["next"] = photo_pages[i + 1] if i < photo_pages.length - 1
 			end
 		end
 	end

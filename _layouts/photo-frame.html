@@ -15,22 +15,6 @@ class: flex
 		flex-wrap: nowrap;
 	}
 	#photo-frame>img { max-height: 90vh;}
-	#left-right {
-		margin: 0;
-		position: absolute;
-		width: 100%;
-		left: 0;
-		top: 50%;
-	}
-	#left-right li {
-		padding: 1em 0.4em;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	#left-right menu { justify-content: space-between;}
-	#left-right li:hover { transform: scale(1.35);}
-	#left-right li:hover>a { opacity: 0;}
 </style>
 
 <figure class="section" id="photo-frame">{% if page.title %}
@@ -48,7 +32,7 @@ class: flex
 					{{ page.camera }}
 				</td>{% endif %}{% if page.location %}
 				<td><img class="icon" src="/images/location.svg" alt="Location">
-					<a href="{{ site.data.location_map[page.location] }}">{{ page.location }}</a>
+					{{ page.location }}
 				</td>{% endif %}
 				<td class="timestamp"><time>{{ page.date | date: "%b %-d %Y, %H:%M:%S" }}</time></td>
 			</tr>
@@ -77,28 +61,6 @@ class: flex
 
 <footer style="width: 100%">
 	<nav><menu>
-		<li><a href="/gallery"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
+		<li><a href="/gallery" onclick="history.back()"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 	</menu></nav>
 </footer>
-
-<nav id="left-right">
-	<menu class="ani">
-		<li id="prev"><a href="{{ page.previous.url }}"><img src="/images/back.svg"></a></li>
-		<li id="next"><a href="{{ page.next.url }}"><img src="/images/forward.svg"></a></li></menu>
-</nav>
-
-<style>{% if page.previous %}
-	#prev {
-		background-image: linear-gradient(#000000a8), url('{{ page.previous.image }}')
-	}
-	#prev:hover {
-		background-image: linear-gradient(#00000039), url('{{ page.previous.image }}')
-	}{% else %}
-	#prev { visibility: collapse;}{% endif %}{% if page.next %}
-	#next {
-		background-image: linear-gradient(#000000a8), url('{{ page.next.image }}')
-	}
-	#next:hover {
-		background-image: linear-gradient(#00000039), url('{{ page.next.image }}')
-	}{% endif %}
-</style>
