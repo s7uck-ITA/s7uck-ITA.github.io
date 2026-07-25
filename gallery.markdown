@@ -15,7 +15,7 @@ permalink: /gallery
 	{% include nav.html ani="yes" %}
 </header>
 
-{% assign photos = site.pages | where_exp: "item", "item.dir contains '/photos/'" | sort: "date" | reverse %}
+{% assign photos = site.pages | where_exp: "item", "item.dir contains site.photos.output_url" | sort: "date" | reverse %}
 
 <main class="wide gridlock ani" id="photo-grid">{% for photo in photos %}
 	<section{% if photo.rating >= 4 %} class="big"{% endif %} onclick="window.location = '{{ photo.url }}'" title="{{ photo.filename }}">
