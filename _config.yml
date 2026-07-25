@@ -13,9 +13,10 @@ plugins:
 
 photos:
   photo_repo: "s7uck/photos"
-  output_url: "photos"
+  output_url: "foto"
   ## UNCOMMENT FOR TESTING
   #remote_exif_url: "https://pastebin.com/raw/DsAnyFKz"
+  location_map_url: "https://raw.githubusercontent.com/s7uck/photos/master/LOCATION.json"
 
 defaults:
   - scope:
@@ -23,5 +24,6 @@ defaults:
     values:
       links:
         links_out: "/links-out"
+        curriculum: "/cve"
         foto: "/gallery"
         contatti: "/contatti"
