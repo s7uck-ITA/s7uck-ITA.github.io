@@ -10,6 +10,7 @@ kramdown:
   hard_wrap: false
 plugins:
   - jekyll-feed
+  - jekyll-leaflet
 
 photos:
   photo_repo: "s7uck/photos"
@@ -26,4 +27,5 @@ defaults:
         links_out: "/links-out"
         curriculum: "/cve"
         foto: "/gallery"
+        video: "/video"
         contatti: "/contatti"

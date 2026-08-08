@@ -14,6 +14,10 @@ class: ani
 		left: 5%;
 		border: 15px double #bdf6b2;
 	}
+	div.leaflet-map {
+		height: 650px !important;
+		aspect-ratio: 17/14;
+	}
 </style>
 
 <div class="snap">
@@ -71,6 +75,24 @@ class: ani
 
 <div class="snap">
 <section>
-	<iframe width="425" src="https://www.openstreetmap.org/export/embed?bbox=-312.18750000000006%2C-83.8299454239804%2C312.18750000000006%2C83.82994542398042&amp;layer=mapnik" style="width: 100%; aspect-ratio: 425/350"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=2/0.0/0.0">Visualizza mappa ingrandita</a></small>
+	{% leaflet_map %}
+		{% leaflet_marker { "latitude": "40.4712427", "longitude": "17.2432278" } %}
+			{%- for post in site.posts -%}
+				{% if post.location.geojson %}
+					{% leaflet_geojson {{post.location.geojson}} %}
+				{% elsif post.location.latitude and post.location.longitude %}
+					{% leaflet_marker { "latitude": {{ post.location.latitude }}, "longitude": {{ post.location.longitude }} } %}
+				{% endif %}
+			{% endfor %}
+			{%- for location in site.data.location_map -%}
+				{% if location[1].coordinates %}
+					{% leaflet_marker {
+						"latitude": {{ location[1].coordinates[0] }},
+						"longitude": {{ location[1].coordinates[1] }},
+						"popupContent": "{{ location[0] }}"
+					} %}
+				{% endif %}
+			{% endfor %}
+	{% endleaflet_map %}
 </section>
 </div>

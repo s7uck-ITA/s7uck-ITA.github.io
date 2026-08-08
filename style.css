@@ -160,8 +160,22 @@ menu.ani > li:hover { padding: 0.4em 1.2em;}
 body.ani > :hover { transform: unset;}
 .ani:hover > :not(:hover) { filter: blur(2px);}
 menu.ani:hover > :not(:hover) { filter: brightness(0.53) !important;}
-body.ani:hover > :not(:hover) { opacity: 0.70; transform: scale(0.90);}
+body.ani:hover > :not(:hover) { opacity: 0.70; transform: scale(0.90); filter: unset;}
 td.ily .icon { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
+/* leaflet add */
+.leaflet-popup-content-wrapper {
+	border-radius: 0 !important;
+	font-family: 'Onest';
+	font-size: 1.20em;
+}
+.leaflet-popup-content {
+	margin: 0.5em 1em !important;
+}
+.leaflet-popup-tip, .leaflet-popup-content-wrapper {
+	background: #101010 !important;
+	border: 1px solid #444444;
+	color: white !important;
+}
 * {
 	transition: all 0.2s ease;
 }

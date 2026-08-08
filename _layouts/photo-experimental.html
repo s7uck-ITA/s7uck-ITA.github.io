@@ -48,7 +48,7 @@ class: flex
 					{{ page.camera }}
 				</td>{% endif %}{% if page.location %}
 				<td><img class="icon" src="/images/location.svg" alt="Location">
-					<a href="{{ site.data.location_map[page.location] }}">{{ page.location }}</a>
+					<a href="{{ site.data.location_map[page.location].url }}">{{ page.location }}</a>
 				</td>{% endif %}
 				<td class="timestamp"><time>{{ page.date | date: "%b %-d %Y, %H:%M:%S" }}</time></td>
 			</tr>
