@@ -46,7 +46,7 @@ header.hero {
 	position: relative;
 	padding: 0;
 }
-section, .section, dialog {
+section, .section, dialog, iframe {
 	border: 1px solid #444444a0;
 	padding: 1em;
 }
@@ -66,6 +66,7 @@ header, section, footer, menu, .list, .grid {
 }
 .list { column-gap: 1em;}
 section.center, .section.center { padding: 2em 1em;}
+section>header, section>footer { padding: 0;}
 .gridlock, .flexlock {	
 	padding: 0;
 	max-width: unset;
@@ -86,8 +87,9 @@ header, section, .section, footer, .list { flex-direction: column;}
 section.center, .section.center, .horizontal.list { align-items: center;}
 .spaced { justify-content: space-evenly;}
 .fully-spaced { justify-content: space-between;}
+.scroll { overflow: scroll;}
 .scroll.snap { scroll-snap-type: both mandatory;}
-.scroll.snap .snap {
+.snap {
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
 }
@@ -155,8 +157,10 @@ h1.hero {
 	z-index: 90;
 }
 menu.ani > li:hover { padding: 0.4em 1.2em;}
+body.ani > :hover { transform: unset;}
 .ani:hover > :not(:hover) { filter: blur(2px);}
 menu.ani:hover > :not(:hover) { filter: brightness(0.53) !important;}
+body.ani:hover > :not(:hover) { opacity: 0.70; transform: scale(0.90);}
 td.ily .icon { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
 * {
 	transition: all 0.2s ease;
