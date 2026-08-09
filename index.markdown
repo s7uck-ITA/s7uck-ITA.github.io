@@ -75,7 +75,7 @@ class: ani
 
 <div class="snap">
 <section>
-	{% leaflet_map %}
+	{% leaflet_map { "gestureHandling": true } %}
 		{% leaflet_marker { "latitude": "40.4712427", "longitude": "17.2432278" } %}
 			{%- for post in site.posts -%}
 				{% if post.location.geojson %}
