@@ -67,7 +67,7 @@ class: ani
 			<li><a href="/gallery"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 		</menu>
 	</header>
-	<div class="ani flex flexlock nowrap full-width scroll snap" style="background-color: black">{% for photo in last_few_photos %}
+	<div class="ani flex flexlock nowrap full-width scroll snap" style="background-color: black; overflow-y: clip">{% for photo in last_few_photos %}
 		<img src="{{ photo.image }}" alt="{{ photo.title | default: photo.filename }}" onclick="window.location = '{{ photo.url }}'" title="{{ photo.filename }}" class="section snap" height=350>{% endfor %}
 	</div>
 </section>

@@ -143,15 +143,16 @@ td { position: relative;}
 h1.hero {
 	font-size: 4rem;
 	color: #bdf6b2;
-	mix-blend-mode: difference;
 	margin: 0;
 	position: absolute;
 	text-align: right;
 	bottom: 1em;
 	right: 1em;
+	backdrop-filter: blur(4px);
+	padding: 0.50em;
 }
 @media (max-width: 762px) { h1.hero { font-size: 2rem;} }
-@media (max-width: 476px) { h1.hero { top: 1em;} }
+@media (max-width: 476px) { h1.hero { top: 1em; bottom: unset;} }
 .ani > :hover {
 	transform: scale(1.100); background-color: black;
 	z-index: 90;
