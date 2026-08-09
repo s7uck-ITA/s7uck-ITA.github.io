@@ -59,12 +59,13 @@ module Jekyll
 				image_filename = File.basename(relative_path)
 				image_thumbnail_filename = image_filename # FIXME
 
-				title = exif['Title'] || exif['Landmark']
+				title = exif['Title']
 				capture_time = exif['DateTimeOriginal']
 				latitude = exif['GPSLatitude']
 				longitude = exif['GPSLongitude']
 				location = exif['Location'] || "#{latitude.to_s} #{longitude.to_s}".strip
 				#FINISH
+				landmark = exif['Landmark']
 				camera = "#{exif['Make'].to_s} #{exif['Model'].to_s}".strip
 				aperture = exif['Aperture']
 				sspeed = exif['ShutterSpeed']
@@ -85,9 +86,10 @@ module Jekyll
 
 				photo_data = {
 					'layout' => 'photo-experimental',
-					'title' => title,
+					'title' => title || landmark,
 					'date' => capture_time,
 					'location' => location,
+					'landmark' => landmark,
 					'camera' => camera,
 					'image' => image_url,
 					'aperture' => aperture,

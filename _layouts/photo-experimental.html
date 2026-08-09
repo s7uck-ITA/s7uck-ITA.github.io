@@ -30,9 +30,9 @@ class: flex
 	#left-right li:hover>a { opacity: 0;}
 </style>
 
-<figure class="section" id="photo-frame">{% if page.title %}
+<figure class="section" id="photo-frame">{% if page.title or page.landmark %}
 	<header>
-		<h3>{{ page.title }}</h3>
+		<h3>{{ page.title | default: page.landmark }}</h3>
 	</header>
 
 	{% endif %}

@@ -22,8 +22,8 @@ permalink: /gallery
 		<img src="{{ photo.image }}" alt="{{ photo.title | default: photo.filename }}">
 
 		<figcaption>
-			<table>{% if photo.title %}
-				<tr><th><big>{{ photo.title }}</big></th></tr>{% endif %}
+			<table>{% if photo.title or photo.landmark %}
+				<thead><th colspan="3"><big>{{ photo.title | default: photo.landmark }}</big></th></thead>{% endif %}
 				<tr>{% if photo.camera %}
 					<td class="ily"><img class="icon" src="/images/camera.svg" alt="Camera">
 						{{ photo.camera }}
