@@ -72,17 +72,22 @@ class: flex
 </section>
 {% endif %}
 
+<nav id="left-right">
+	<menu class="ani">
+		<li id="prev"><a href="{{ page.previous.url }}"><img src="/images/back.svg"></a></li>
+		<li id="next"><a href="{{ page.next.url }}"><img src="/images/forward.svg"></a></li></menu>
+</nav>
+
 <footer style="width: 100%">
 	<nav><menu>
 		<li><a href="/gallery"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 	</menu></nav>
 </footer>
 
-<nav id="left-right">
-	<menu class="ani">
-		<li id="prev"><a href="{{ page.previous.url }}"><img src="/images/back.svg"></a></li>
-		<li id="next"><a href="{{ page.next.url }}"><img src="/images/forward.svg"></a></li></menu>
-</nav>
+<style media="(max-width: 476px)">
+	body { border: 0;}
+	#left-right { position: unset;}
+</style>
 
 <style>{% if page.previous %}
 	#prev {

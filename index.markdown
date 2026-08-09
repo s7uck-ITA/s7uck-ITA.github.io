@@ -5,7 +5,10 @@ class: ani
 
 <style>
 	html { scroll-snap-type: y proximity;}
-	body>.snap { padding: 14vh 5vw;}
+	body>.snap {
+		padding: 5vw;
+		min-height: 90vh;
+	}
 	.hero { overflow: hidden;}
 	#myself-mobi {
 		aspect-ratio: 1;
@@ -49,13 +52,29 @@ class: ani
 	</section>
 	<section>
 		<h3>Cosa mi piace?</h3>
-		<p>seconda sezione</p>
+		<!--TODO tabella verticale -->
 	</section>
 	<section>
 		<h3>Cosa puoi trovare su questo sito?</h3>
 		{% include nav.html %}
 	</section>
 </main>
+</div>
+
+<div class="snap">
+<section>
+	<h2>Cosa piace a {{ site.title }}?</h2>
+	<!--TODO classe x queste liste -->
+	<ul class="ani horizontal flexlock scroll stretch" style="background-color: black; overflow-y: clip">{% for int in site.data.interessi %}
+		<section>
+			<img src="{{ int[1].image }}">
+			<figcaption>
+				<h3>{{ int[0] | replace: "_", " "  | capitalize }}</h3>
+			</figcaption>
+		</section>
+		{% endfor %}
+	</ul>
+</section>
 </div>
 
 {% assign last_few_photos = site.pages | where_exp: "item", "item.dir contains site.photos.output_url" | sort: "date" | reverse | slice: 0, 8 %}
@@ -67,9 +86,9 @@ class: ani
 			<li><a href="/gallery"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 		</menu>
 	</header>
-	<div class="ani flex flexlock nowrap full-width scroll snap" style="background-color: black; overflow-y: clip">{% for photo in last_few_photos %}
+	<ul class="ani horizontal flexlock full-width scroll snap" style="background-color: black; overflow-y: clip">{% for photo in last_few_photos %}
 		<img src="{{ photo.image }}" alt="{{ photo.title | default: photo.filename }}" onclick="window.location = '{{ photo.url }}'" title="{{ photo.filename }}" class="section snap" height=350>{% endfor %}
-	</div>
+	</ul>
 </section>
 </div>
 

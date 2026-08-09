@@ -46,7 +46,7 @@ header.hero {
 	position: relative;
 	padding: 0;
 }
-section, .section, dialog, iframe {
+section, .section, figure, dialog, iframe {
 	border: 1px solid #444444a0;
 	padding: 1em;
 }
@@ -69,7 +69,9 @@ section.center, .section.center { padding: 2em 1em;}
 section>header, section>footer { padding: 0;}
 .gridlock, .flexlock {	
 	padding: 0;
+	gap: 0;
 	max-width: unset;
+	list-style: none;
 }
 .gridlock {
 	display: -ms-grid;
@@ -81,12 +83,13 @@ section>header, section>footer { padding: 0;}
 }
 .gridlock.wide { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));}
 header, section, .section, footer, .list { flex-direction: column;}
-.flex { display: -ms-flex; display: flex;}
+.flex, .flexlock { display: -ms-flex; display: flex;}
 .horizontal, .grid { flex-direction: row;}
-.nowrap { flex-wrap: nowrap;}
+.nowrap, .flexlock.list { flex-wrap: nowrap;}
 section.center, .section.center, .horizontal.list { align-items: center;}
 .spaced { justify-content: space-evenly;}
 .fully-spaced { justify-content: space-between;}
+.stretch > * { flex-grow: 1;}
 .scroll { overflow: scroll;}
 .scroll.snap { scroll-snap-type: both mandatory;}
 .snap {

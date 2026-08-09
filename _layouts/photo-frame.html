@@ -10,10 +10,7 @@ class: flex
 		gap: 2em;
 		flex-wrap: wrap;
 	}
-	#photo-frame {
-		padding: 0; gap: 0;
-		flex-wrap: nowrap;
-	}
+	#photo-frame { padding: 0;}
 	#photo-frame>img { max-height: 90vh;}
 </style>
 
@@ -64,3 +61,7 @@ class: flex
 		<li><a href="/gallery" onclick="history.back()"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 	</menu></nav>
 </footer>
+
+<style media="(max-width: 476px)">
+	body { border: 0;}
+</style>
