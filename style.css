@@ -57,7 +57,7 @@ section p, .section p, dialog {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-header, section, footer, menu, .list, .grid {
+header, section, footer, menu, .list, .grid, .coverflow {
 	display: -ms-flex;
 	display: flex;
 	row-gap: 0.5em;
@@ -66,8 +66,13 @@ header, section, footer, menu, .list, .grid {
 }
 .list { column-gap: 1em;}
 section.center, .section.center { padding: 2em 1em;}
-section>header, section>footer { padding: 0;}
-.gridlock, .flexlock {	
+section>header, section>footer,
+.section>header, .section>footer,
+dialog>header, dialog>footer {
+	padding: 0;
+	flex-direction: row;
+}
+.gridlock, .flexlock, .coverflow {	
 	padding: 0;
 	gap: 0;
 	max-width: unset;
@@ -84,17 +89,21 @@ section>header, section>footer { padding: 0;}
 .gridlock.wide { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));}
 header, section, .section, footer, .list { flex-direction: column;}
 .flex, .flexlock { display: -ms-flex; display: flex;}
-.horizontal, .grid { flex-direction: row;}
-.nowrap, .flexlock.list { flex-wrap: nowrap;}
+.horizontal, .grid, .coverflow { flex-direction: row;}
+.nowrap, .coverflow { flex-wrap: nowrap;}
 section.center, .section.center, .horizontal.list { align-items: center;}
 .spaced { justify-content: space-evenly;}
 .fully-spaced { justify-content: space-between;}
 .stretch > * { flex-grow: 1;}
-.scroll { overflow: scroll;}
+.scroll, .coverflow { overflow: scroll;}
 .scroll.snap { scroll-snap-type: both mandatory;}
 .snap {
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
+}
+.coverflow {
+	background-color: inherit;
+	overflow-y: clip;
 }
 menu li { list-style: none; margin: 0;}
 menu li.accent, menu li:hover, button:hover, .button:hover { border-color: #08C7BB;}
@@ -161,10 +170,9 @@ h1.hero {
 	z-index: 90;
 }
 menu.ani > li:hover { padding: 0.4em 1.2em;}
-body.ani > :hover { transform: unset;}
 .ani:hover > :not(:hover) { filter: blur(2px);}
 menu.ani:hover > :not(:hover) { filter: brightness(0.53) !important;}
-body.ani:hover > :not(:hover) { opacity: 0.70; transform: scale(0.90); filter: unset;}
+body.aniii > .not-visible { opacity: 0.70;}
 td.ily .icon { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
 /* leaflet add */
 .leaflet-popup-content-wrapper {

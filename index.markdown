@@ -1,6 +1,6 @@
 ---
 layout: default
-class: ani
+class: aniii
 ---
 
 <style>
@@ -65,7 +65,7 @@ class: ani
 <section>
 	<h2>Cosa piace a {{ site.title }}?</h2>
 	!--TODO classe x queste liste --
-	<ul class="ani horizontal flexlock scroll stretch" style="background-color: black; overflow-y: clip">{% for int in site.data.interessi %}
+	<ul class="coverflow stretch">{% for int in site.data.interessi %}
 		<section>
 			<img src="{{ int[1].image }}">
 			<figcaption>
@@ -86,7 +86,7 @@ class: ani
 			<li><a href="/gallery"><img class="icon" src="/images/camera.svg"> tutte le foto</a></li>
 		</menu>
 	</header>
-	<ul class="ani horizontal flexlock full-width scroll snap" style="background-color: black; overflow-y: clip">{% for photo in last_few_photos %}
+	<ul class="ani full-width snap coverflow">{% for photo in last_few_photos %}
 		<img src="{{ photo.image }}" alt="{{ photo.title | default: photo.filename }}" onclick="window.location = '{{ photo.url }}'" title="{{ photo.filename }}" class="section snap" height=350>{% endfor %}
 	</ul>
 </section>
