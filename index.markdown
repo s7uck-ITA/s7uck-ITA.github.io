@@ -115,3 +115,33 @@ class: aniii
 	{% endleaflet_map %}
 </section>
 </div>
+
+<script>
+	// Source - https://stackoverflow.com/q/30943662
+	// Posted by Bill Riess, modified by community. See post 'Timeline' for change history
+	// Retrieved 2026-08-10, License - CC BY-SA 3.0
+
+	function isInViewport(element) {
+	    rect = element.getBoundingClientRect()
+	    html = document.documentElement
+	    return (
+	        rect.top > -40 &&
+	        rect.bottom < (window.innerHeight || html.clientHeight) + 40
+	    )
+	}
+
+	snapsters = document.querySelectorAll('body>.snap')
+	function greyscale(e) {
+		Array.from(snapsters).forEach(div => {
+			console.log(isInViewport(div))
+			if (!isInViewport(div)) {
+				div.classList.add('not-visible')
+				div.style.filter = "blur("+div.getBoundingClientRect().bottom/250+"px)"
+			} else {
+				div.classList.remove('not-visible')
+				div.style.filter = "unset"
+			}
+		})
+	}
+	window.addEventListener('scroll', greyscale)
+</script>
