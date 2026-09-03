@@ -16,6 +16,7 @@ class: aniii
 		bottom: -21%;
 		left: 5%;
 		border: 15px double #bdf6b2;
+		object-position: right;
 	}
 	div.leaflet-map {
 		height: 650px !important;
@@ -25,7 +26,7 @@ class: aniii
 
 <div class="snap">
 <header class="hero">
-	<img id="myself-mobi" src="/images/Wallpaper_04.jpg" width=200>
+	<img id="myself-mobi" src="/images/20221030_170034.jpg" width=200>
 
 	<h1 class="hero">{{ site.title }}</h1>
 </header>
@@ -47,12 +48,9 @@ class: aniii
 <div class="snap">
 <main class="gridlock ani">
 	<section>
-		<h3>Che faccio</h3>
-		<p>Oltre a studiare [inserisci facoltà qui] a [inserisci ateneo qui], mi dedico ai miei interessi&hellip;</p>
-	</section>
-	<section>
 		<h3>Cosa mi piace?</h3>
-		<!--TODO tabella verticale -->
+		<table>
+		</table>
 	</section>
 	<section>
 		<h3>Cosa puoi trovare su questo sito?</h3>
@@ -92,7 +90,7 @@ class: aniii
 </section>
 </div>
 
-<div class="snap">
+<!--div class="snap">
 <section>
 	{% leaflet_map { "gestureHandling": true } %}
 		{% leaflet_marker { "latitude": "40.4712427", "longitude": "17.2432278" } %}
@@ -114,7 +112,7 @@ class: aniii
 			{% endfor %}
 	{% endleaflet_map %}
 </section>
-</div>
+</div-->
 
 <script>
 	// Source - https://stackoverflow.com/q/30943662
