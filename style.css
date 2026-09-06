@@ -1,6 +1,7 @@
 @font-face { font-family: 'Onest'; src: url(/Onest.woff); font-display: swap;}
 @font-face { font-family: 'M PLUS 1 Code'; src: url(/MPLUS1Code.woff); font-display: swap;}
 @font-face { font-family: 'Archivo Black'; src: url('/Archivo Black.woff'); font-display: swap;}
+@font-face { font-family: 'Spectral'; src: url(/Spectral-Regular.woff); font-display: swap;}
 @font-face { font-family: 'Krona One'; src: url(/KronaOne-Regular.woff); font-display: swap;}
 
 body {
@@ -64,6 +65,7 @@ header, section, footer, menu, .list, .grid, .coverflow {
 	column-gap: 0.5em;
 	flex-wrap: wrap;
 }
+body>article { font-family: 'Spectral', serif;}
 .list { column-gap: 1em;}
 section.center, .section.center { padding: 2em 1em;}
 section>header, section>footer,
