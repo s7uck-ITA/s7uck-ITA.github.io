@@ -6,10 +6,10 @@ layout: default
     {% include nav.html %}
 </header>
 
-<article>
+<article{% if page.notitle %} class="section"{% endif %}>
     <header>
-        <small><time>{{ page.date | date: "%b %-d, %Y" }}</time></small>
-        <h1>{{ page.title }}</h1>
+        <small><time>{{ page.date | date: "%b %-d, %Y" }}</time></small>{% unless page.notitle %}
+        <h1>{{ page.title }}</h1>{% endunless %}
     </header>
 
     {% if page.image %}
@@ -19,3 +19,7 @@ layout: default
 
     {{ content }}
 </article>
+
+{% if page.notitle %}<style>
+    body { border: 10vw solid transparent;}
+</style>{% endif %}
