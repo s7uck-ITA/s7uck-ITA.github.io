@@ -30,23 +30,15 @@ class: aniii
 
 	<h1 class="hero">{{ site.title }}</h1>
 </header>
-<!--section class="center">
-	<nav><menu>
-		<li>links out</li>
-		<li style=""></li>
-		<li>scendi</li>
-	</menu></nav>
-</section-->
 <main class="gridlock ani">
 	<section class="center">
-		<h2>Chi sono?</h2>
-		<p>Sono uno studente di 18 anni dal Sud Italia e questo è il mio sito web</p>
+		<p>Sono un giovane studente pugliese e questo è il mio angolo di Internet.</p>
 	</section>
 	<section>
-		<h3>Cosa puoi trovare su questo sito?</h3>
 		{% include nav.html %}
 	</section>
 </main>
+
 </div>
 
 <!--div class="snap">

@@ -36,11 +36,11 @@ layout: default
 		</menu>
 	</section>
 	<section>
-		<table>{% for contact in site.contact %}
+		<table>{% for contact in site.contact %}{% unless contact[1] == site.contact.email %}
 			<tr>
 				<td>{{ contact[0] }}</td>
 				<td>{{ contact[1] }}</td>
-			</tr>{% endfor %}
+			</tr>{% endunless %}{% endfor %}
 		</table>
 	</section>
 </main>
