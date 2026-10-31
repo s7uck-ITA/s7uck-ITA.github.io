@@ -32,7 +32,7 @@ class: aniii
 </header>
 <main class="gridlock ani">
 	<section class="center">
-		<p>Sono un giovane studente pugliese e questo è il mio angolo di Internet.</p>
+		<p>Sono un giovane studente salentino e questo è il mio spazio su Internet.</p>
 	</section>
 	<section>
 		{% include nav.html %}

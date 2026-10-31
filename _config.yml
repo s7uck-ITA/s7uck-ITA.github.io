@@ -1,10 +1,10 @@
-title: Sito-ITA
+title: Pierfrancesco
 email: pfrancecsop252@gmail.com
 
 description: >-
     
-baseurl: ""
-url: ""
+baseurl: "https://pierfrancesco.eu/"
+url: "https://pierfrancesco.eu/"
 
 kramdown:
   input: GFM
