@@ -58,7 +58,7 @@ section p, .section p, dialog {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-header, section, footer, menu, .list, .grid, .coverflow {
+header, section, footer, menu, .list, .grid, .coverflow, body.horizontal {
 	display: -ms-flex;
 	display: flex;
 	row-gap: 0.5em;
@@ -71,7 +71,7 @@ section.center, .section.center { padding: 2em 1em;}
 section>header, section>footer,
 .section>header, .section>footer,
 dialog>header, dialog>footer {
-	padding: 0;
+	padding-inline: 0;
 	flex-direction: row;
 }
 .gridlock, .flexlock, .coverflow {	
@@ -89,13 +89,23 @@ dialog>header, dialog>footer {
 	.gridlock > .big { grid-column: span 2;}
 }
 .gridlock.wide { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));}
-header, section, .section, footer, .list { flex-direction: column;}
+.gridlock.cards>section, .tight { padding: 0; gap: 0; flex-wrap: nowrap;}
+header, section, .section, footer, .list, .vertical { flex-direction: column;}
 .flex, .flexlock { display: -ms-flex; display: flex;}
 .horizontal, .grid, .coverflow { flex-direction: row;}
 .nowrap, .coverflow { flex-wrap: nowrap;}
 section.center, .section.center, .horizontal.list { align-items: center;}
+body.horizontal {
+	align-items: flex-start;
+	justify-content: center;
+}
+body.horizontal>main {
+	margin: 0;
+	flex-grow: 1;
+}
 .spaced { justify-content: space-evenly;}
 .fully-spaced { justify-content: space-between;}
+.left { text-align: left;}
 .stretch > * { flex-grow: 1;}
 .scroll, .coverflow { overflow: scroll;}
 .scroll.snap { scroll-snap-type: both mandatory;}
@@ -104,7 +114,7 @@ section.center, .section.center, .horizontal.list { align-items: center;}
 	scroll-snap-stop: always;
 }
 .coverflow {
-	background-color: inherit;
+	background-color: black;
 	overflow-y: clip;
 }
 menu li { list-style: none; margin: 0;}
@@ -130,9 +140,9 @@ table, td, th {
 	border-collapse: collapse;
 }
 th { background-color: #101010bb;}
-td { position: relative;}
+td, section, button { position: relative;}
 .timestamp { color: yellowgreen; text-align: right;}
-.icon, menu img, button img {
+.icon, menu img {
 	max-height: 1em;
 	vertical-align: middle;
 	max-width: unset;
@@ -174,7 +184,7 @@ h1.hero {
 menu.ani > li:hover { padding: 0.4em 1.2em;}
 .ani:hover > :not(:hover) { filter: blur(2px);}
 menu.ani:hover > :not(:hover) { filter: brightness(0.53) !important;}
-td.ily .icon { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
+td.ily .icon, button.ily .icon, img.ily { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
 /* leaflet add */
 .leaflet-popup-content-wrapper {
 	border-radius: 0 !important;

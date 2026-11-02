@@ -6,8 +6,7 @@ permalink: /gallery
 
 <style>
 	body { max-width: unset;}
-	#photo-grid>section { padding: 0; gap: 0; flex-wrap: nowrap;}
-	section>img, section>table { height:100%;}
+	#photo-grid>section>img, #photo-grid>section>table { height:100%;}
 </style>
 
 <header class="hero">
@@ -17,7 +16,7 @@ permalink: /gallery
 
 {% assign photos = site.pages | where_exp: "item", "item.dir contains site.photos.output_url" | sort: "date" | reverse %}
 
-<main class="wide gridlock ani" id="photo-grid">{% for photo in photos %}
+<main class="wide cards gridlock ani" id="photo-grid">{% for photo in photos %}
 	<section{% if photo.rating >= 4 %} class="big"{% endif %} onclick="window.location = '{{ photo.url }}'" title="{{ photo.filename }}">
 		<img src="{{ photo.image }}" alt="{{ photo.title | default: photo.filename }}">
 
