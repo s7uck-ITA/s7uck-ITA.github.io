@@ -9,8 +9,28 @@ layout: default
 <article{% if page.notitle %} class="section"{% endif %}>
     <header>
         <small><time>{{ page.date | date: "%b %-d, %Y" }}</time></small>{% unless page.notitle %}
-        <h1>{{ page.title }}</h1>{% endunless %}
+        <h1>{{ page.title }}</h1>{% endunless %}{% if page.location %}<a href="{{ site.data.location_map[page.location].url }}"><small><img class="icon" src="/images/location.svg"> {{ page.location }}</small></a>{% endif %}
     </header>
+
+    {% if page.track %}
+    <center>
+    <section class="tight horizontal nowrap" id="track">
+        <button class="tight" title="listen" onclick="embed.classList.toggle('hidden'); track.classList.toggle('hidden')">
+            <img src="{{ page.track.cover }}" width=100>
+        </button>
+        <figcaption><table>
+            <thead>
+                <th class="accent left" colspan=3><a href="{{ page.track.listen }}">{{ page.track.name }}</a></th>
+            </thead>
+            <tr>
+                <td>{{ page.track.artists | join: ', ' }}</td>
+                <td>{{ page.track.album }}</td>
+                <td>{{ page.track.year }}</td>
+            </tr>
+        </table></figcaption>
+    </section>
+    </center>
+    {% endif %}
 
     {% if page.image %}
     <figure class="full-width cover" style="background-image: url({{ page.image }});">
@@ -19,6 +39,20 @@ layout: default
 
     {{ content }}
 </article>
+
+{% if page.track %}<style>
+    #track {
+        width: max-content;
+        font-family: 'Onest';
+    }
+    #track table { min-width: 20ch;}
+    #track>button:active {
+        transform: scale(60%);
+    }
+    iframe#embed.hidden { transform: scaleY(0);}
+    #embed { margin: 2em auto;}
+    #track.hidden { opacity: 0.6; transform: scale(90%) translateY(50%);}
+</style>{% endif %}
 
 {% if page.notitle %}<style>
     body { border: 10vw solid transparent;}
