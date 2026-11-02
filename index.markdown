@@ -3,6 +3,10 @@ layout: default
 class: aniii
 ---
 
+{% assign last_song = site.posts | where_exp: "item", "item.track" | first %}
+{% assign track_recency_limit = "now" | date: "%s" | minus: 1209600 | date: "%Y%m%d" %} <!-- 2 weeks -->
+{% assign song_date = last_song.date | date: "%Y%m%d" %}
+
 <style>
 	html { scroll-snap-type: y proximity;}
 	body>.snap {
@@ -18,6 +22,15 @@ class: aniii
 		border: 15px double #bdf6b2;
 		object-position: right;
 	}
+	#albumart {
+		max-height: 70px;
+		position: absolute;
+		right: 2em;
+		top: -2em;
+		border: 2px solid aliceblue;
+		z-index: -1;
+	}
+	button:hover>#albumart { rotate: 3deg; top: -2.5em;}
 	div.leaflet-map {
 		height: 650px !important;
 		aspect-ratio: 17/14;
@@ -33,28 +46,45 @@ class: aniii
 <main class="gridlock ani">
 	<section class="center">
 		<p>Sono un giovane studente salentino e questo è il mio spazio su Internet.</p>
-	</section>
+	</section>{% if last_song and song_date >= track_recency_limit %}
 	<section>
-		{% include nav.html %}
-	</section>
+		<h3>Canzone in l&infin;p</h3>
+		<button class="ily" onclick="window.location = '{{ last_song.url }}'">
+			<img src="{{ last_song.track.cover }}" id="albumart"> 
+			<img class="icon" src="/images/music.svg"> 
+			<b>{{ last_song.track.name }}</b> · {{ last_song.track.artists | join: ', ' }}
+		</button>
+	</section>{% endif %}
 </main>
-
 </div>
 
-<!--div class="snap">
+<div class="snap">
 <section>
-	<h3>Cosa mi piace?</h3>
-	<ul class="ani coverflow stretch">{% for int in site.data.interessi %}
-		<section>
-			<img src="{{ int[1].image }}">
+	<header class="fully-spaced horizontal">
+		<h2>esplora il sito</h2>
+		{% include nav.html %}
+	</header>
+	<ul class="ani coverflow stretch">{% for item in site.posts limit:7 %}
+		<section class="tight" onclick="window.location = '{{ item.url }}'">{% if item.image %}
+			<img src="{{ item.image }}" height=200>{% elsif item.track.cover %}<img src="{{ item.track.cover }}" height=200>{% endif %}
 			<figcaption>
-				<h3>{{ int[0] | replace: "_", " "  | capitalize }}</h3>
+				<table>{% unless item.notitle %}
+					<thead><th colspan="3"><big>{{ item.title }}</big></th></thead>{% endunless %}
+					<tr>{% if item.notitle %}
+						<td class="ily">
+							{% if item.track %}<img class="icon" src="/images/music.svg" alt="Music"> <b>Canzone</b>{% else %}<b>Post</b>{% endif %} del
+						</td>{% endif %}
+						<td class="timestamp"><time>{{ item.date | date: "%-d %b, %Y" }}</time></td>{% if item.location %}
+						<td class="ily"><img class="icon" src="/images/location.svg" alt="Location">
+							{{ item.location }}
+						</td>{% endif %}
+					</tr>
+				</table>
 			</figcaption>
-		</section>
-		{% endfor %}
+		</section>{% endfor %}
 	</ul>
 </section>
-</div-->
+</div>
 
 {% assign last_few_photos = site.pages | where_exp: "item", "item.dir contains site.photos.output_url" | sort: "date" | reverse | slice: 0, 8 %}
 <div class="snap">
