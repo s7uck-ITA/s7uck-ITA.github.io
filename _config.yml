@@ -20,6 +20,10 @@ photos:
   #remote_exif_url: "https://pastebin.com/raw/DsAnyFKz"
   location_map_url: "https://raw.githubusercontent.com/s7uck/photos/master/LOCATION.json"
 
+collections:
+  showcase:
+    output: true
+
 contact:
   name: Pierfrancesco
   email: pfrancecsop252@gmail.com
