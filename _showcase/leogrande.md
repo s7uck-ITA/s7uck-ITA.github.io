@@ -1,14 +1,11 @@
 ---
 layout: project
-name: OpenStreetMap
-image: /images/projects/specialux.webp
-link: https://www.openstreetmap.org/user/pierfrancescop
-highlight: true
-started: 2025-09-01
-excerpt: "OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che conosco della mia zona."
+title: Premio "Alessandro Leogrande"
+started: 2026-01
+finished: 2026-05-09
 ---
-ciaociao
 
-inserire demo mabox
-
-inserire screenshos lavori
+Il premio "Alessandro Leogrande", intitolato a un giornalista mio concittadino scomparso
+nel 2017, è un premio rilasciato su base annuale a libri di giornalismo narrativo.
+Quest'anno ho partecipato alla votazione leggendo "Quando il mondo dorme" di
+Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione.
