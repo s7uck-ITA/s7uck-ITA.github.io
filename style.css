@@ -68,9 +68,10 @@ header, section, footer, menu, .list, .grid, .coverflow, body.horizontal {
 body>article { font-family: 'Spectral', serif;}
 .list { column-gap: 1em;}
 section.center, .section.center { padding: 2em 1em;}
-section>header, section>footer,
+section header, section footer,
 .section>header, .section>footer,
-dialog>header, dialog>footer {
+dialog header, dialog footer,
+summary header, summary footer {
 	padding-inline: 0;
 	flex-direction: row;
 }

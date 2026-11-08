@@ -22,6 +22,9 @@ permalink: /cve
 	.coverflow>section {
 		min-width: 29ch;
 	}
+	summary::marker {
+		content: ""; /*LOLLLL*/
+	}
 </style>
 
 <style media="(min-width: 920px)">
@@ -74,17 +77,16 @@ permalink: /cve
 	<h3>Competenze, Skills</h3>
 	<section>
 		<h3>Informatica</h3>
-		<ul class="scroll coverflow">
-			<!-- questi dovrebbero essere details -->
-			<details class="section">
+		<ul>
+			<details class="section" open>
 				<summary><h3>Sistemi operativi</h3></summary>
 				<table>
 					<tr><td>Windows</td></tr>
 					<tr><td>GNU/Linux</td></tr>
 				</table>
 			</details>
-			<section>
-				<h3>Programmazione</h3>
+			<details class="section">
+				<summary><h3>Programmazione</h3></summary>
 				Dallo scripting ad intere applicazioni server & client side
 				<table>
 					<tr><td>Python</td></tr>
@@ -92,9 +94,9 @@ permalink: /cve
 					<tr><td>Javascript</td></tr>
 					<tr><td>~Ruby</td></tr>
 				</table>
-			</section>
-			<section>
-				<h3>Strumenti informatici</h3>
+			</details>
+			<details class="section">
+				<summary><h3>Strumenti informatici</h3></summary>
 				<table>
 					<tr><td>Git</td></tr>
 					<tr><td>Microsoft Office</td></tr>
@@ -103,40 +105,40 @@ permalink: /cve
 					<tr><td>Shell Scripting e Automazione / CI-CD</td></tr>
 					<tr><td>Sublime Text</td></tr>
 				</table>
-			</section>
+			</details>
 		</ul>
 	</section>
 	<section>
 		<h3>Design & Grafica</h3>
-		<ul class="scroll coverflow">
-			<section>
-				<header class="fully-spaced horizontal">
-				<h3>Web Design</h3>
-				<a class="button">esempi</a>
-				</header>
+		<ul>
+			<details class="section">
+				<summary><header class="fully-spaced">
+								<h3>Web Design</h3>
+								<a class="button">esempi</a>
+								</header></summary>
 				Costruzione di siti web graficamente avanzati anche solo con HTML e CSS, Apache, express.Js o Jekyll
-			</section>
-			<section>
-				<header class="fully-spaced horizontal">
-				<h3>Graphic Design, Progettazione</h3>
-				<a class="button">esempi</a>
-				</header>
+			</details>
+			<details class="section">
+				<summary><header class="fully-spaced">
+								<h3>Graphic Design, Progettazione</h3>
+								<a class="button">esempi</a>
+								</header></summary>
 				Grafiche promozionali, sfondi, loghi e packaging da zero
-			</section>
-			<section>
-				<header class="fully-spaced horizontal">
-				<h3>Interface Design e Prototipazione</h3>
-				<a class="button">esempi</a>
-				</header>
+			</details>
+			<details class="section">
+				<summary><header class="fully-spaced">
+								<h3>Interface Design e Prototipazione</h3>
+								<a class="button">esempi</a>
+								</header></summary>
 				Creo UI Concepts da quando ho memoria, iniziando su PowerPoint, adesso in modo strutturato con Figma e Prototypes. Anche App Windows via uWP
-			</section>
+			</details>
 		</ul>
 	</section>
 	<section>
 		<h3>Fotografia & Videomaking</h3>
-		<ul class="scroll coverflow">
-			<section>
-				<h3>Concetti</h3>
+		<ul>
+			<details class="section" open>
+				<summary><h3>Concetti</h3></summary>
 				<table>
 					<tr><td>Regole di composizione</td></tr>
 					<tr><td>Scatto manuale</td></tr>
@@ -144,23 +146,23 @@ permalink: /cve
 					<tr><td>L-Cut, jump cut, animazioni</td></tr>
 					<tr><td>Node based video editing</td></tr>
 				</table>
-			</section>
-			<section>
-				<h3>Software per fotografia</h3>
+			</details>
+			<details class="section">
+				<summary><h3>Software per fotografia</h3></summary>
 				<table>
 					<tr><td>Darktable</td></tr>
 					<tr><td>EXIFtool</td></tr>
 				</table>
-			</section>
-			<section>
-				<h3>Software per video editing</h3>
+			</details>
+			<details class="section">
+				<summary><h3>Software per video editing</h3></summary>
 				<table>
 					<tr><td>VSDC Video Editor</td></tr>
 					<tr><td>Olive</td></tr>
 					<tr><td>Kdenlive</td></tr>
 					<tr><td>FFmpeg</td></tr>
 				</table>
-			</section>
+			</details>
 		</ul>
 	</section>
 </div>
@@ -170,7 +172,7 @@ permalink: /cve
 	<ul class="scroll coverflow">
 		<section>
 			<img class="ily" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" width=80>
-			<header class="fully-spaced horizontal">
+			<header class="fully-spaced">
 			<h3>OpenStreetMap</h3>
 			<a class="button" href="/showcase/osm.html">Altri dettagli</a>
 			</header>
@@ -178,7 +180,7 @@ permalink: /cve
 			conosco della mia zona.
 		</section>
 		<section>
-			<header class="fully-spaced horizontal">
+			<header class="fully-spaced">
 			<h3>Special UX</h3>
 			<a class="button">Altri dettagli</a>
 			</header>
@@ -190,28 +192,29 @@ permalink: /cve
 <div class="snap">
 	<h3>Dimensioni di me</h3>
 	<ul>
-		<details class="section bg">
+		<details class="section bg" id="av">
 			<summary><h3>Aviazione</h3></summary>
+			Tutto ciò che vola fa i miei sogni fin da quando ero piccolo. 
 		</details>
-		<details class="section bg">
+		<details class="section bg" id="tech">
 			<summary><h3>Tecnologia e Informatica</h3></summary>
 			Ho imparato da autodidatta negli anni a usare professionalmente il computer per
 			programmazione, graﬁca, video editing e creazione siti web.
 		</details>
-		<details class="section bg">
+		<details class="section bg" id="photo">
 			<summary><h3>Fotografia</h3></summary>
 			Sono da lungo tempo appassionato di fotografia. Mi piace catturare in particolar modo paesaggi, ma anche scatti più avanzati come quelli al cielo notturno.
 		</details>
-		<details class="section bg">
+		<details class="section bg" id="design">
 			<summary><h3>Design</h3></summary>
 			Disegnare e “immaginare cose” mi permette di dare sfogo a una creatività interiore, che mi spinge a ripensare esteticamente o tecnicamente ciò che uso. Diversi anni fa mi sono avvicinato al graphic design, e successivamente all’interface design, product design, web design, e in generale al design artistico e tecnico (anche interior, urban, transport etc).
 			<br><br>Il design è il mezzo dell'interazione tra umano e strumento, o umano e ambiente. Dev'essere quindi in un certo senso “stoico” rispetto all’utente, ma contemporaneamente consapevole del fine dell'oggetto o del sistema: cioè il design richiede attenzione e lungimiranza oltre che un buon senso estetico. Ho iniziato da piccolo a creare concept di sistemi operativi, pagine web semplici imparando l’HTML e il CSS, e occasionalmente grafiche promozionali come locandine o banner. Con il tempo ho affinato molto questa abilità, a partire da nozioni tecniche, per poi arrivare a creare design originali partendo da concetti nuovi.
 		</details>
-		<details class="section bg">
+		<details class="section bg" id="mutset">
 			<summary><h3>Musica</h3></summary>
 			Ho iniziato ad interessarmi attivamente di musica solo da pochi anni, esplorando cioè dei generi, e provando a produrre qualcosa. In termini di gusti musicali non sono molto originale per la mia età. Ascolto perlopiù rap e hip hop, mentre per la musica strumentale, techno e house tra le altre cose.<br>Molti giudicano la musica della mia generazione come superficiale, ma non è così, infatti tra i miei artisti preferiti figurano delle penne che fanno invidia anche ad artisti internazionali. Come ogni corrente artistica se ne può dire di tutto, ma comunque si studierà nei libri di scuola.
 		</details>
-		<details class="section bg">
+		<details class="section bg" id="world">
 			<summary><h3>Cultura e Conoscenza del mondo</h3></summary>
 			Intendo comprendere a fondo i meccanismi che regolano le nostre società. Ho
 			approfondito già da prima delle superiori dei temi di economia, e successivamente ho
@@ -232,7 +235,7 @@ permalink: /cve
 			nel 2017, è un premio rilasciato su base annuale a libri di giornalismo narrativo.
 			Quest'anno ho partecipato alla votazione leggendo "Quando il mondo dorme" di
 			Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione.</td>
-			<th class="accent"><a>Altri dettagli</a></th>
+			<th class="accent"><a href="/showcase/leogrande.html">Altri dettagli</a></th>
 		</tr>
 		<tr>
 			<td>2017</td>
@@ -267,7 +270,7 @@ permalink: /cve
 		<tr>
 			<td>3/2026</td>
 			<td><h4>Iscrizione a ADMO (Associazione Donatori di Midollo Osseo)</h4></td>
-			<th class="accent"><a>Altri dettagli</a></th>
+			<th class="accent"><a href="https://admo.it/">Altri dettagli</a></th>
 		</tr>
 	</table>
 </div>
@@ -313,11 +316,13 @@ permalink: /cve
 
 <style>
 details.bg {
-	background-image: linear-gradient(#000b, #22cb), url(/images/interes/Av.JPG);
 	background-attachment: fixed;
 	background-size: cover;
 }
-details.bg:nth-of-type(2n) {
-	background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);
-}
+.bg#av { background-image: linear-gradient(#000b, #22cb), url(/images/interes/Av.JPG);}
+.bg#design { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
+.bg#tech { background-image: linear-gradient(#000b, #4a5b), url();}
+.bg#photo { background-image: linear-gradient(#000b, #441b), url(/images/interes/camera.webp);}
+.bg#mutset { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
+.bg#world { background-image: linear-gradient(#000b, #299b), url(/images/interes/world.jpg);}
 </style>

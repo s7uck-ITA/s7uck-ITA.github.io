@@ -8,20 +8,16 @@ layout: default
 
 <article>
     <header>
-    	{% if page.started != false %}started <time datetime="{{ page.started }}">{{ page.started | date: "%b %-d, %Y" }}</time>{% if page.finished != false %}, finished <time datetime="{{ page.finished }}">{{ page.finished | date: "%b %-d, %Y" }}</time>{% endif %}
+    	{% if page.started != false %}<span>dal <time datetime="{{ page.started }}">{{ page.started | date: "%-d %b %Y" }}</time>{% if page.finished %} al <time datetime="{{ page.finished }}">{{ page.finished | date: "%-d %b %Y" }}</time></span>{% endif %}
     	{% else %}work in progress{% endif %}
         <h1>{{ page.title }}</h1>
-    </header>
 
-	<ul class="list horizontal">{% for category in page.categories %}
-		<span class="chip">{{ category }}</span>{% endfor %}
-		{% if page.link %}<menu>
-			<a href="{{ page.link }}" title="Link">
-				<span>{{ page.link | split: '://' | last }} </span>
-				<img class="invert" src="/images/forward.svg">
-			</a>
-		</menu>{% endif %}
-	</ul>
+		{% if page.link %}
+		<a class="button" href="{{ page.link }}" title="Link">
+			<span>{{ page.link | split: '://' | last }} </span>
+			<img src="/images/forward.svg">
+		</a>{% endif %}
+	    </header>
 
     {% if page.image %}
     <figure class="full-width cover" style="background-image: url({{ page.image }});">
