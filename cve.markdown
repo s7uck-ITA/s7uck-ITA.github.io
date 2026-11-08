@@ -23,7 +23,10 @@ permalink: /cve
 		min-width: 29ch;
 	}
 	summary::marker {
-		content: ""; /*LOLLLL*/
+		content: ""; /* LOLLLL*/
+	}
+	#interessi summary::marker {
+		content: "\2192";
 	}
 </style>
 
@@ -44,11 +47,11 @@ permalink: /cve
 	{% include nav.html %}
 </header>
 
-<main style="max-width: 100%;">
+<main style="max-width: min(100%, 90ch);">
 <div class="snap">
-<section class="horizontal nowrap" style="background-color: #696932">
+<section style="background-color: #696932">
 	<h2>(!)</h2>
-	Questa pagina è in costruzione e contiene riferimenti personali, ancora da filtrare. È vietata la riproduzione.
+	alcune pagine "Altri dettagli" sono ancora in costruzione
 </section>
 </div>
 
@@ -66,8 +69,7 @@ permalink: /cve
 			<th class="accent">C1</th>
 		</tr>
 		<tr>
-			<td><h4>Patente di guida</h4>
-			0 errori</td>
+			<td><h4>Patente di guida</h4></td>
 			<th class="accent">B</th>
 		</tr>
 	</table>
@@ -77,28 +79,37 @@ permalink: /cve
 	<h3>Competenze, Skills</h3>
 	<section>
 		<h3>Informatica</h3>
-		<ul>
+		<ul class="accordion-ani">
 			<details class="section" open>
-				<summary><h3>Sistemi operativi</h3></summary>
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Sistemi operativi</h3>
+						</header></summary>
 				<table>
 					<tr><td>Windows</td></tr>
 					<tr><td>GNU/Linux</td></tr>
 				</table>
 			</details>
 			<details class="section">
-				<summary><h3>Programmazione</h3></summary>
-				Dallo scripting ad intere applicazioni server & client side
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Programmazione e Sviluppo App</h3>
+						</header></summary>
 				<table>
-					<tr><td>Python</td></tr>
-					<tr><td>C#</td></tr>
-					<tr><td>Javascript</td></tr>
-					<tr><td>~Ruby</td></tr>
+					<tr><td><a href="https://github.com/{{ site.contact.github }}?tab=repositories&q=&type=&language=python">Python</a></td></tr>
+					<tr><td><a href="https://github.com/{{ site.contact.github }}?tab=repositories&q=&type=&language=c%23">C#</a></td></tr>
+					<tr><td><a href="https://github.com/{{ site.contact.github }}?tab=repositories&q=&type=&language=javascript">Javascript</a></td></tr>
+					<tr><td><a href="https://github.com/s7uck-ITA/s7uck-ITA.github.io/blob/master/_plugins/photo_gen.rb">~Ruby</a></td></tr>
+					<tr><td><a href="https://github.com/{{ site.contact.github }}/PowerPage">Windows Forms / Univerasal Windows Platform</a></td></tr>
 				</table>
 			</details>
 			<details class="section">
-				<summary><h3>Strumenti informatici</h3></summary>
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Strumenti informatici</h3>
+						</header></summary>
 				<table>
-					<tr><td>Git</td></tr>
+					<tr><td><a href="https://github.com/{{ site.contact.github }}">Git</a></td></tr>
 					<tr><td>Microsoft Office</td></tr>
 					<tr><td>Libreoffice</td></tr>
 					<tr><td>SQL</td></tr>
@@ -110,25 +121,40 @@ permalink: /cve
 	</section>
 	<section>
 		<h3>Design & Grafica</h3>
-		<ul>
+		<ul class="accordion-ani">
 			<details class="section">
 				<summary><header class="fully-spaced">
 								<h3>Web Design</h3>
-								<a class="button">esempi</a>
+								<a class="clicky button"><img src="/images/slide_up.svg"></a>
 								</header></summary>
 				Costruzione di siti web graficamente avanzati anche solo con HTML e CSS, Apache, express.Js o Jekyll
+
+				<h3>esempi</h3>
+				<ul class="scroll coverflow">
+					<section class="tight">
+						<img src="https://user-images.githubusercontent.com/71439748/181296264-86f68bee-dfb8-495d-a19d-a288abd64e83.png" height=200>
+						<figcaption>
+							<table>
+								<tr>
+									<td><h4>APOD Viewer</h4></td>
+									<th class="accent"><a href="https://apodviewer.github.io/"><img src="/images/forward.svg"></a></th>
+								</tr>
+							</table>
+						</figcaption>
+					</section>
+				</ul>
 			</details>
 			<details class="section">
 				<summary><header class="fully-spaced">
 								<h3>Graphic Design, Progettazione</h3>
-								<a class="button">esempi</a>
+								<a class="clicky button"><img src="/images/slide_up.svg"></a>
 								</header></summary>
 				Grafiche promozionali, sfondi, loghi e packaging da zero
 			</details>
 			<details class="section">
 				<summary><header class="fully-spaced">
 								<h3>Interface Design e Prototipazione</h3>
-								<a class="button">esempi</a>
+								<a class="clicky button"><img src="/images/slide_up.svg"></a>
 								</header></summary>
 				Creo UI Concepts da quando ho memoria, iniziando su PowerPoint, adesso in modo strutturato con Figma e Prototypes. Anche App Windows via uWP
 			</details>
@@ -136,9 +162,12 @@ permalink: /cve
 	</section>
 	<section>
 		<h3>Fotografia & Videomaking</h3>
-		<ul>
+		<ul class="accordion-ani">
 			<details class="section" open>
-				<summary><h3>Concetti</h3></summary>
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Concetti</h3>
+						</header></summary>
 				<table>
 					<tr><td>Regole di composizione</td></tr>
 					<tr><td>Scatto manuale</td></tr>
@@ -148,14 +177,20 @@ permalink: /cve
 				</table>
 			</details>
 			<details class="section">
-				<summary><h3>Software per fotografia</h3></summary>
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Software per fotografia</h3>
+						</header></summary>
 				<table>
 					<tr><td>Darktable</td></tr>
 					<tr><td>EXIFtool</td></tr>
 				</table>
 			</details>
 			<details class="section">
-				<summary><h3>Software per video editing</h3></summary>
+				<summary><header class="left">
+						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<h3>Software per video editing</h3>
+						</header></summary>
 				<table>
 					<tr><td>VSDC Video Editor</td></tr>
 					<tr><td>Olive</td></tr>
@@ -169,7 +204,7 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Portfolio</h3>
-	<ul class="ani scroll coverflow">
+	<ul class="scroll coverflow">
 		<section>
 			<img class="ily" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" width=80>
 			<header class="fully-spaced">
@@ -182,14 +217,26 @@ permalink: /cve
 		<section>
 			<header class="fully-spaced">
 			<h3>Special UX</h3>
-			<a class="button">Altri dettagli</a>
+			<a class="button" href="/showcase/specialux.html">Altri dettagli</a>
 			</header>
-			Il mio concept UI più dettagliato e serimentale. È pensato da zero per essere prevedibile e innovativo al tempo stesso.
+			Il mio concept UI più dettagliato e sperimentale. È pensato da zero per essere prevedibile e innovativo al tempo stesso.
+		</section>
+		<section>
+			<header class="fully-spaced">
+			<h3>SunWatch</h3>
+			<a class="button" href="/showcase/sunwatch.html">Altri dettagli</a>
+			</header>
+		</section>
+		<section>
+			<header class="fully-spaced">
+			<h3>Crystal Browser</h3>
+			<a class="button" href="/showcase/crystal.html">Altri dettagli</a>
+			</header>
 		</section>
 	</ul>
 </div>
 
-<div class="snap">
+<div class="snap" id="interessi">
 	<h3>Dimensioni di me</h3>
 	<ul class="accordion-ani">
 		<details class="section bg" id="av">
@@ -215,7 +262,7 @@ permalink: /cve
 			Ho iniziato ad interessarmi attivamente di musica solo da pochi anni, esplorando cioè dei generi, e provando a produrre qualcosa. In termini di gusti musicali non sono molto originale per la mia età. Ascolto perlopiù rap e hip hop, mentre per la musica strumentale, techno e house tra le altre cose.<br>Molti giudicano la musica della mia generazione come superficiale, ma non è così, infatti tra i miei artisti preferiti figurano delle penne che fanno invidia anche ad artisti internazionali. Come ogni corrente artistica se ne può dire di tutto, ma comunque si studierà nei libri di scuola.
 		</details>
 		<details class="section bg" id="world">
-			<summary><h3>Cultura e Conoscenza del mondo</h3></summary>
+			<summary><h3>Il mondo</h3></summary>
 			Intendo comprendere a fondo i meccanismi che regolano le nostre società. Ho
 			approfondito già da prima delle superiori dei temi di economia, e successivamente ho
 			maturato interesse per tutto ciò che riguarda la geopolitica, la storia, la comunicazione e
@@ -277,10 +324,16 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Relazionarsi</h3>
-	android
+	<!-- android -->
 	<table>
-		<th><h3>i miei difetti</h3></th>
-		<tr><td></td></tr>
+		<thead>
+			<th><h3>i miei pregi</h3></th>
+			<th><h3>i miei difetti</h3></th>
+		</thead>
+		<tr>
+			<td>Creo le tabelle</td>
+			<td>Non le riempio</td>
+		</tr>
 	</table>
 </div>
 
@@ -315,14 +368,12 @@ permalink: /cve
 </footer-->
 
 <style>
-details.bg {
-	background-attachment: fixed;
-	background-size: cover;
-}
+.bg h3 { color: white;}
+details.bg { background-attachment: fixed;}
 .bg#av { background-image: linear-gradient(#000b, #22cb), url(/images/interes/Av.JPG);}
 .bg#design { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
-.bg#tech { background-image: linear-gradient(#000b, #4a5b), url();}
+.bg#tech { background-image: linear-gradient(#000b, #226b), url(/images/interes/echno.JPG);}
 .bg#photo { background-image: linear-gradient(#000b, #441b), url(/images/interes/camera.webp);}
-.bg#mutset { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
+.bg#mutset { background-image: linear-gradient(#000b, #623b), url(/images/interes/kino.jpg);}
 .bg#world { background-image: linear-gradient(#000b, #299b), url(/images/interes/world.jpg);}
 </style>
