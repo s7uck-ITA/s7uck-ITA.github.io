@@ -120,15 +120,15 @@ body.horizontal>main {
 }
 menu li { list-style: none; margin: 0;}
 menu li.accent, menu li:hover, button:hover, .button:hover { border-color: #08C7BB;}
-menu li, button, .button {
+menu li, button, .button, summary::marker {
 	background-color: #101010bb;
 	border: 1px solid #444444;
 	/*border-radius: 100vw;*/
 	min-width: 4ch;
 	text-align: center;
 }
-button { display: inline-block; color: currentColor; font-size: inherit;}
-menu li, button, .button, td, th { padding: 0.4em 0.8em;}
+button, summary::marker { display: inline-block; color: currentColor; font-size: inherit;}
+menu li, button, .button, td, th, summary::marker { padding: 0.4em 0.8em;}
 nav a { color: currentColor; border: 0 !important;}
 ul, ol, menu { padding-left: 0;}
 li { margin: 12px 0;}
@@ -178,13 +178,17 @@ h1.hero {
 }
 @media (max-width: 762px) { h1.hero { font-size: 2rem;} }
 @media (max-width: 476px) { h1.hero { top: 1em; bottom: unset;} }
-.ani > :hover {
-	transform: scale(1.100); background-color: black;
-	z-index: 90;
+@media (hover: hover) {
+	.ani:hover > :not(:hover) { filter: blur(2px);}
+	.ani > :hover {
+		transform: scale(1.100); background-color: black;
+		z-index: 90;
+	}
 }
 menu.ani > li:hover { padding: 0.4em 1.2em;}
-.ani:hover > :not(:hover) { filter: blur(2px);}
-menu.ani:hover > :not(:hover) { filter: brightness(0.53) !important;}
+menu.ani:hover > :not(:hover), .accordion-ani:has(:open):hover > details:not(:open) { filter: brightness(0.53) !important;}
+.accordion-ani > :open, .accordion-ani > :target { min-height: 220px;}
+.clicky:active { transform: scale(60%);}
 td.ily .icon, button.ily .icon, img.ily { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
 /* leaflet add */
 .leaflet-popup-content-wrapper {

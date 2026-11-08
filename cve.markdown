@@ -169,7 +169,7 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Portfolio</h3>
-	<ul class="scroll coverflow">
+	<ul class="ani scroll coverflow">
 		<section>
 			<img class="ily" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" width=80>
 			<header class="fully-spaced">
@@ -191,7 +191,7 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Dimensioni di me</h3>
-	<ul>
+	<ul class="accordion-ani">
 		<details class="section bg" id="av">
 			<summary><h3>Aviazione</h3></summary>
 			Tutto ciò che vola fa i miei sogni fin da quando ero piccolo. 

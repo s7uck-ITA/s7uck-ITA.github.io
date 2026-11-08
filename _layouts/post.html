@@ -15,7 +15,7 @@ layout: default
     {% if page.track %}
     <center>
     <section class="tight horizontal nowrap" id="track">
-        <button class="tight" title="listen" onclick="embed.classList.toggle('hidden'); track.classList.toggle('hidden')">
+        <button class="tight clicky" title="listen" onclick="embed.classList.toggle('hidden'); track.classList.toggle('hidden')">
             <img src="{{ page.track.cover }}" width=100>
         </button>
         <figcaption><table>
@@ -46,9 +46,6 @@ layout: default
         font-family: 'Onest';
     }
     #track table { min-width: 20ch;}
-    #track>button:active {
-        transform: scale(60%);
-    }
     iframe#embed.hidden { transform: scaleY(0);}
     #embed { margin: 2em auto;}
     #track.hidden { opacity: 0.6; transform: scale(90%) translateY(50%);}
