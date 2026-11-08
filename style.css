@@ -70,11 +70,11 @@ body>article { font-family: 'Spectral', serif;}
 section.center, .section.center { padding: 2em 1em;}
 section header, section footer,
 .section>header, .section>footer,
-dialog header, dialog footer,
-summary header, summary footer {
+dialog header, dialog footer {
 	padding-inline: 0;
 	flex-direction: row;
 }
+summary header, summary footer { padding: 0;}
 .gridlock, .flexlock, .coverflow {	
 	padding: 0;
 	gap: 0;
@@ -106,7 +106,8 @@ body.horizontal>main {
 }
 .spaced { justify-content: space-evenly;}
 .fully-spaced { justify-content: space-between;}
-.left { text-align: left;}
+.left { text-align: left; justify-content: flex-start;}
+.center { justify-content: center;}
 .stretch > * { flex-grow: 1;}
 .scroll, .coverflow { overflow: scroll;}
 .scroll.snap { scroll-snap-type: both mandatory;}
@@ -120,15 +121,16 @@ body.horizontal>main {
 }
 menu li { list-style: none; margin: 0;}
 menu li.accent, menu li:hover, button:hover, .button:hover { border-color: #08C7BB;}
-menu li, button, .button, summary::marker {
+menu li, button, .button {
 	background-color: #101010bb;
 	border: 1px solid #444444;
 	/*border-radius: 100vw;*/
 	min-width: 4ch;
 	text-align: center;
 }
-button, summary::marker { display: inline-block; color: currentColor; font-size: inherit;}
-menu li, button, .button, td, th, summary::marker { padding: 0.4em 0.8em;}
+button { display: inline-block; color: currentColor; font-size: inherit;}
+menu li, button, .button, td, th { padding: 0.4em 0.8em;}
+menu li.square, button.square, .button.square { padding: 1em;}
 nav a { color: currentColor; border: 0 !important;}
 ul, ol, menu { padding-left: 0;}
 li { margin: 12px 0;}
@@ -141,7 +143,7 @@ table, td, th {
 	border-collapse: collapse;
 }
 th { background-color: #101010bb;}
-td, section, button { position: relative;}
+td, section, button, summary { position: relative;}
 .timestamp { color: yellowgreen; text-align: right;}
 .icon, menu img {
 	max-height: 1em;
@@ -150,6 +152,11 @@ td, section, button { position: relative;}
 }
 .invert { filter: invert();}
 .cover { height: 400px;}
+.bg {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .full-width { /* credit: gomakethings.com */
 	position: relative;
 	width: 100vw;
@@ -163,7 +170,7 @@ td, section, button { position: relative;}
 	background-attachment: fixed;
 	background-position: center;
 }
-[onclick] { cursor: pointer;}
+[onclick], summary { cursor: pointer;}
 
 h1.hero {
 	font-size: 4rem;
@@ -184,12 +191,14 @@ h1.hero {
 		transform: scale(1.100); background-color: black;
 		z-index: 90;
 	}
+	.accordion-ani:hover > :not(:hover, :open) { filter: brightness(0.53);}
 }
 menu.ani > li:hover { padding: 0.4em 1.2em;}
-menu.ani:hover > :not(:hover), .accordion-ani:has(:open):hover > details:not(:open) { filter: brightness(0.53) !important;}
+menu.ani:hover > :not(:hover), .accordion-ani:has(:open) > details:not(:open) { filter: brightness(0.53) !important;}
 .accordion-ani > :open, .accordion-ani > :target { min-height: 220px;}
 .clicky:active { transform: scale(60%);}
-td.ily .icon, button.ily .icon, img.ily { position: absolute; z-index: -10; opacity: .5; top: 0.2em; left: 0.2em;}
+td.ily .icon, button.ily .icon, img.ily, summary::marker { position: absolute; opacity: .5; top: 0.2em; left: 0.2em;}
+.ily ~ * { z-index: 2;}
 /* leaflet add */
 .leaflet-popup-content-wrapper {
 	border-radius: 0 !important;
