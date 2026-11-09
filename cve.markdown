@@ -208,37 +208,15 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Portfolio</h3>
-	<ul class="scroll snap coverflow">
-		<section class="snap" id="osm">
-			<img class="ily" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" width=80>
-			<header class="fully-spaced">
-			<h3>OpenStreetMap</h3>
-			<a class="button" href="/showcase/osm.html">Altri dettagli</a>
+	<ul class="scroll snap coverflow">{% for project in site.showcase %}{% if project.portfolio %}
+		<section class="snap{% if project.image %} bg{% endif %}" id="{{ project.slug }}">{% if project.icon %}
+			<img class="ily" src="{{ project.icon }}" width=80>{% endif %}
+			<header class="fully-spaced nowrap">
+			<h3>{{ project.title }}</h3>
+			<a class="clicky button" href="{{ project.url }}" title="Altri dettagli"><img class="icon" src="/images/forward.svg"></a>
 			</header>
-			OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che
-			conosco della mia zona.
-		</section>
-		<section class="snap" id="special ux">
-			<header class="fully-spaced">
-			<h3>Special UX</h3>
-			<a class="button" href="/showcase/specialux.html">Altri dettagli</a>
-			</header>
-			Il mio concept UI più dettagliato e sperimentale. È pensato da zero per essere prevedibile e innovativo al tempo stesso.
-		</section>
-		<section class="snap bg" id="sunwatch">
-			<img class="ily" src="/images/projects/sunwatch-logo.png" width=80>
-			<header class="fully-spaced">
-			<h3>SunWatch</h3>
-			<a class="button" href="/showcase/sunwatch.html">Altri dettagli</a>
-			</header>
-		</section>
-		<section class="snap" id="crystal">
-			<img class="ily" src="/images/projects/Logo.png" width=80>
-			<header class="fully-spaced">
-			<h3>Crystal Browser</h3>
-			<a class="button" href="/showcase/crystal.html">Altri dettagli</a>
-			</header>
-		</section>
+			{{ project.desc }}
+		</section>{% endif %}{% endfor %}
 	</ul>
 </div>
 
