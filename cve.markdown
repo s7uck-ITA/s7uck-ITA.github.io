@@ -191,7 +191,7 @@ permalink: /cve
 			<img class="ily" src="{{ project.icon }}" width=80>{% endif %}
 			<header class="fully-spaced nowrap">
 			<h3>{{ project.title }}</h3>
-			<a class="clicky button" href="{{ project.url }}" title="Altri dettagli"><img class="icon" src="/images/forward.svg"></a>
+			<a class="button" href="{{ project.url }}" title="Altri dettagli"><img class="icon" src="/images/forward.svg"></a>
 			</header>
 			{{ project.desc }}
 		</section>{% endif %}{% endfor %}
@@ -246,7 +246,7 @@ permalink: /cve
 	{% if div.rows %}<table>{% for row in div.rows %}
 		<tr>
 			<td>{% if row.h %}<h4>{{ row.h }}</h4>{% endif %}
-			{{ row.text }}</td>{% if row.td %}{% for td in row.td %}
+			<div>{{ row.text }}</div></td>{% if row.td %}{% for td in row.td %}
 			<th class="accent">{{td}}</th>{% endfor %}{% endif %}{% if row.link %}
 			<th class="accent"><a href="{{ row.link[1] }}">{{ row.link[0] }}</a></th>{% endif %}
 		</tr>{% endfor %}
