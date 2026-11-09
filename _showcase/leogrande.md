@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Premio "Alessandro Leogrande"
-started: 2026-01
+started: 2026-01-06
 finished: 2026-05-09
 ---
 

@@ -1,4 +1,4 @@
-- istruzione:
+- id: istruzione
   title: "Istruzione & Certficazioni"
   rows:
   - h: "Diploma di maturità scientifica"
@@ -10,60 +10,59 @@
   - h: "Patente di guida"
     td: ["B"]
 
-- competenze:
+- id: competenze
   title: "Competenze, Skills"
 
-- interessi:
-  title: "Dimensioni di me"
-  covers:
-  - aviazione:
-    image: ""
-    desc: ""
-  - fotografia:
-    image: ""
-    title: "Fotografia"
-    desc: "Sono da lungo tempo appassionato di fotografia. Mi piace catturare in particolar modo paesaggi, ma anche scatti più avanzati come quelli al cielo notturno."
-  - informatica:
-    image: ""
-    title: "Tecnologia e Informatica"
-    desc: "Ho imparato da autodidatta negli anni a usare professionalmente il computer per programmazione, graﬁca, video editing e creazione siti web."
-  - design:
-    image: ""
-    desc: ""
-  - mondo:
-    image: ""
-    title: "Cultura e Conoscenza del mondo"
-    desc: "Intendo comprendere a fondo i meccanismi che regolano le nostre società. Ho approfondito già da prima delle superiori dei temi di economia, e successivamente ho maturato interesse per tutto ciò che riguarda la geopolitica, la storia, la comunicazione e l'espressione culturale dei singoli individui e dei popoli. Mi appassionano, ad esempio, la musica, l'architettura e la letteratura."
-
-- sociale:
+- id: sociale
   title: "Attività sociali e politiche"
-  covers:
+  rows:
   - years: 2026
-    title: "Premio \"Alessandro Leogrande\""
+    h: "Premio \"Alessandro Leogrande\""
     place: "Taranto"
-    desc: "Il premio \"Alessandro Leogrande\", intitolato a un giornalista mio concittadino scomparso nel 2017, è un premio rilasciato su base annuale a libri di giornalismo narrativo. Quest'anno ho partecipato alla votazione leggendo \"Quando il mondo dorme\" di Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione."
-    link: ["Altri dettagli", ""]
+    text: >-
+      Il premio "Alessandro Leogrande", intitolato a un giornalista mio concittadino
+      scomparso nel 2017, è un premio rilasciato su base annuale a libri di giornalismo
+      narrativo. Quest'anno ho partecipato alla votazione leggendo "Quando il mondo dorme"
+      di Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel
+      mio piccolo alla sua premiazione.
+    link: ["Altri dettagli", "/showcase/leogrande.html"]
   - years: 2017
-    title: "AEDE - Ambasciatori d'Europa 2018"
+    h: "AEDE - Ambasciatori d'Europa 2018"
     place: "Ceglie Messapica"
-    desc: "Primo premio \"Giuseppe Tramarollo\" scuole primarie e attestato di merito eccezionale. L'obiettivo del concorso era immaginare un percorso attraverso il quale potesse realizzarsi una vera unione europea. Ho partecipato presentando il logo e il video promo, in lingua inglese, di un'ipotetica tv europea \"eu 1 tv\" con palinsesti che incentivassero nei cittadini un sentimento di appartenenza e fratellanza europea."
+    text: >-
+      Primo premio "Giuseppe Tramarollo" scuole primarie e attestato di merito eccezionale.
+      L'obiettivo del concorso era immaginare un percorso attraverso il quale potesse
+      realizzarsi una vera unione europea. Ho partecipato presentando il logo e il video
+      promo, in lingua inglese, di un'ipotetica tv europea "eu 1 tv" con palinsesti che
+      incentivassero nei cittadini un sentimento di appartenenza e fratellanza europea.
     link: ["Altri dettagli", ""]
 
-- volontariato:
+- id: volontariato
   title: "Volontariato"
-  covers:
+  rows:
   - years: "6/2025"
-    title: "3ª Passeggiata di Solidarietà"
+    h: "3ª Passeggiata di Solidarietà"
     place: "Grottaglie"
-    desc: "Passeggiata di 4 km a sostegno del reparto di Oncoematologia Pediatrica a Taranto, con destinazione Aeroporto di Grottaglie."
+    text: >-
+      Passeggiata di 4 km a sostegno del reparto di Oncoematologia Pediatrica a Taranto, con
+      destinazione Aeroporto di Grottaglie.
   - years: "9/2025+"
-    title: "OpenStreetMap"
-    desc: "OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che conosco della mia zona."
-    link: ["Altri dettagli", ""]
+    h: "OpenStreetMap"
+    text: >-
+      OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025
+      modifico assiduamente la mappa tentando il più possibile di completarla con ciò che
+      conosco della mia zona.
+    link: ["Altri dettagli", "/showcase/osm.html"]
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg"
   - years: "3/2026"
-    title: "Iscrizione a ADMO (Associazione Donatori di Midollo Osseo)"
+    h: "Iscrizione a ADMO (Associazione Donatori di Midollo Osseo)"
     place: "Grottaglie"
+    link: ["Altri dettagli", "https://admo.it/"]
 
-- relazionarsi:
+- id: relazionarsi
   title: "Relazionarsi"
+  col:
+    plus:
+      - "lol"
+    minus:
+      - "xd"
