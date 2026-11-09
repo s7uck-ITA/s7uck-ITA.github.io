@@ -107,7 +107,7 @@ body.horizontal>main {
 	flex-grow: 1;
 }
 .spaced { justify-content: space-evenly;}
-.fully-spaced { justify-content: space-between;}
+.fully-spaced { text-align: left; justify-content: space-between;}
 .left { text-align: left; justify-content: flex-start;}
 .center { justify-content: center;}
 .stretch > * { flex-grow: 1;}

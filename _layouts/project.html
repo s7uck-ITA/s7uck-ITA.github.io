@@ -3,29 +3,34 @@ layout: default
 ---
 
 <style>
-	.bg { background-image: linear-gradient(#992b, #000b), url("{{ page.image }}");}
-	.hero { position: unset;}
+	.bg { background-image: linear-gradient(#{{ page.color | default: "000000" }}bb, #000000bb), url("{{ page.image }}");}
 </style>
+
+<div style="padding: 5vw 0">
+<header>
+    {% include nav.html %}
+</header>
 
 <header class="section hero bg">
 	<h1 class="hero">{{ page.title }}</h1>
 </header>
-<div class="gridlock">
-<section>
-    {% include nav.html %}
-</section>
-<header class="section">
-	{% if page.started != false %}<span>dal <time datetime="{{ page.started }}">{{ page.started | date: "%-d %b %Y" }}</time>{% if page.finished %} al <time datetime="{{ page.finished }}">{{ page.finished | date: "%-d %b %Y" }}</time></span>{% endif %}
-	{% else %}work in progress{% endif %}
-
-	{% if page.link %}
-	<a class="button" href="{{ page.link }}" title="Link">
-		<span>{{ page.link | split: '://' | last }} </span>
-		<img src="/images/forward.svg">
-	</a>{% endif %}
-</header>
+{% if page.link %}
+<section class="center">
+	<menu class="ani">
+		<li title="Link"><a href="{{ page.link }}">
+			{{ page.link | split: '://' | last }} <img class="icon" src="/images/forward.svg">
+		</a></li>
+	</menu>
+</section>{% endif %}
 </div>
 
-<article>
-	{{ content }}
-</article>
+<main>
+	<header class="section">
+		{% if page.started != false %}<span>dal <time datetime="{{ page.started }}">{{ page.started | date: "%-d %b %Y" }}</time>{% if page.finished %} al <time datetime="{{ page.finished }}">{{ page.finished | date: "%-d %b %Y" }}</time>{% endif %}</span>
+		{% else %}work in progress{% endif %}
+	</header>
+
+	<article>
+		{{ content }}
+	</article>
+</main>
