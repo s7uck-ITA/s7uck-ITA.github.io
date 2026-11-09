@@ -86,7 +86,7 @@ permalink: /cve
 		<ul class="accordion-ani">
 			<details class="section" open>
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Sistemi operativi</h3>
 						</header></summary>
 				<table>
@@ -96,7 +96,7 @@ permalink: /cve
 			</details>
 			<details class="section">
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Programmazione e Sviluppo App</h3>
 						</header></summary>
 				<table>
@@ -109,7 +109,7 @@ permalink: /cve
 			</details>
 			<details class="section">
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Strumenti informatici</h3>
 						</header></summary>
 				<table>
@@ -141,7 +141,7 @@ permalink: /cve
 							<table>
 								<tr>
 									<td><h4>APOD Viewer</h4></td>
-									<th class="accent"><a href="https://apodviewer.github.io/"><img src="/images/forward.svg"></a></th>
+									<th class="accent"><a href="https://apodviewer.github.io/"><img class="icon" src="/images/forward.svg"></a></th>
 								</tr>
 							</table>
 						</figcaption>
@@ -151,14 +151,14 @@ permalink: /cve
 			<details class="section">
 				<summary><header class="fully-spaced">
 								<h3>Graphic Design, Progettazione</h3>
-								<a class="clicky button"><img src="/images/slide_up.svg"></a>
+								<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 								</header></summary>
 				Grafiche promozionali, sfondi, loghi e packaging da zero
 			</details>
 			<details class="section">
 				<summary><header class="fully-spaced">
 								<h3>Interface Design e Prototipazione</h3>
-								<a class="clicky button"><img src="/images/slide_up.svg"></a>
+								<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 								</header></summary>
 				Creo UI Concepts da quando ho memoria, iniziando su PowerPoint, adesso in modo strutturato con Figma e Prototypes. Anche App Windows via uWP
 			</details>
@@ -169,7 +169,7 @@ permalink: /cve
 		<ul class="accordion-ani">
 			<details class="section" open>
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Concetti</h3>
 						</header></summary>
 				<table>
@@ -182,7 +182,7 @@ permalink: /cve
 			</details>
 			<details class="section">
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Software per fotografia</h3>
 						</header></summary>
 				<table>
@@ -192,7 +192,7 @@ permalink: /cve
 			</details>
 			<details class="section">
 				<summary><header class="left">
-						<a class="clicky button"><img src="/images/slide_up.svg"></a>
+						<a class="clicky button"><img class="icon" src="/images/slide_up.svg"></a>
 						<h3>Software per video editing</h3>
 						</header></summary>
 				<table>
