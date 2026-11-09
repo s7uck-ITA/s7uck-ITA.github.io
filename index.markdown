@@ -62,7 +62,7 @@ class: aniii
 <section>
 	<header class="fully-spaced horizontal">
 		<h2>esplora il sito</h2>
-		{% include nav.html %}
+		{% include nav.html ani="yes" %}
 	</header>
 	<ul class="ani coverflow stretch">{% for item in site.posts limit:7 %}
 		<section class="tight" onclick="window.location = '{{ item.url }}'">{% if item.image %}

@@ -23,6 +23,7 @@ photos:
 collections:
   showcase:
     output: true
+    sort_by: portfolio
 
 contact:
   name: Pierfrancesco

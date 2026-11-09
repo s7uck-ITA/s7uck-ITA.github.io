@@ -71,10 +71,9 @@ header, section, footer, menu, .list, .grid, .coverflow, body.horizontal {
 body>article { font-family: 'Spectral', serif;}
 .list { column-gap: 1em;}
 section.center, .section.center { padding: 2em 1em;}
-section header, section footer,
-.section>header, .section>footer,
-dialog header, dialog footer {
-	padding-inline: 0;
+section header, section footer, .section>header, .section>footer,
+dialog header, dialog footer, :open summary header {
+	padding: 1em 0;
 	flex-direction: row;
 }
 summary header, summary footer { padding: 0;}
