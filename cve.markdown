@@ -19,18 +19,13 @@ permalink: /cve
 		object-position: right;
 	}
 	section { overflow: auto;}
-	.coverflow>section {
-		min-width: 29ch;
-	}
-	summary::marker {
-		content: ""; /* LOLLLL*/
-	}
-	#interessi summary::marker {
-		content: "\2192";
-	}
+	.coverflow>section { min-width: 29ch;}
+	summary::marker { content: ""; /* LOLLLL*/}
+	#interessi summary::marker { content: "\2192";}
+	summary h3 { max-width: 71%;}
 </style>
 
-<style media="(min-width: 160ch)">	
+<style media="(min-width: 160ch)">
 	body>header, body>footer {
 		height: 100vh;
 		position: sticky;
@@ -53,29 +48,14 @@ permalink: /cve
 
 <main style="max-width: min(100%, 90ch);">
 <div class="snap">
-<section style="background-color: #696932">
-	<h2>(!)</h2>
-	alcune pagine "Altri dettagli" sono ancora in costruzione
-</section>
-</div>
-
-<div class="snap">
 	<h3>Istruzione & Certficazioni</h3>
-	<table>
+	<table>{% for row in site.data.curriculum[0].rows %}
 		<tr>
-			<td><h4>Diploma di maturità scientifica</h4>
-			Liceo "Giuseppe Moscati" di Grottaglie: indirizzo scienze applicate</td>
-			<th class="accent">100/100</th>
-		</tr>
-		<tr>
-			<td><h4>Certificazione linguistica</h4>
-			Cambridge English FIRST</td>
-			<th class="accent">C1</th>
-		</tr>
-		<tr>
-			<td><h4>Patente di guida</h4></td>
-			<th class="accent">B</th>
-		</tr>
+			<td>{% if row.h %}<h4>{{ row.h }}</h4>{% endif %}
+			{{ row.text }}</td>{% if row.td %}{% for td in row.td %}
+			<th class="accent">{{td}}</th>{% endfor %}{% endif %}{% if row.link %}
+			<th class="accent"><a href="{{ row.link[1] }}">{{ row.link[0] }}</a></th>{% endif %}
+		</tr>{% endfor %}
 	</table>
 </div>
 
@@ -134,18 +114,16 @@ permalink: /cve
 				Costruzione di siti web graficamente avanzati anche solo con HTML e CSS, Apache, express.Js o Jekyll
 
 				<h3>esempi</h3>
-				<ul class="scroll coverflow">
+				<ul class="scroll coverflow">{% for website in site.showcase %}{% if website.website %}
 					<section class="tight">
-						<img src="https://user-images.githubusercontent.com/71439748/181296264-86f68bee-dfb8-495d-a19d-a288abd64e83.png" height=200>
+						<img src="{{ website.image }}" height=200>
 						<figcaption>
-							<table>
-								<tr>
-									<td><h4>APOD Viewer</h4></td>
-									<th class="accent"><a href="https://apodviewer.github.io/"><img class="icon" src="/images/forward.svg"></a></th>
-								</tr>
-							</table>
+							<table><tr>
+								<td><h4><a href="{{ website.link }}">{{ website.title }}</a></h4></td>
+								<th class="accent" onclick="window.location = '{{ website.link }}'"><img class="icon" src="/images/forward.svg"></th>
+							</tr></table>
 						</figcaption>
-					</section>
+					</section>{% endif %}{% endfor %}
 				</ul>
 			</details>
 			<details class="section">
@@ -221,104 +199,44 @@ permalink: /cve
 </div>
 
 <div class="snap" id="interessi">
-	<h3>Dimensioni di me</h3>
-	<ul class="accordion-ani">
-		<details class="section bg" id="av">
-			<summary><h3>Aviazione</h3></summary>
-			Tutto ciò che vola fa i miei sogni fin da quando ero piccolo. 
-		</details>
-		<details class="section bg" id="tech">
-			<summary><h3>Tecnologia e Informatica</h3></summary>
-			Ho imparato da autodidatta negli anni a usare professionalmente il computer per
-			programmazione, graﬁca, video editing e creazione siti web.
-		</details>
-		<details class="section bg" id="photo">
-			<summary><h3>Fotografia</h3></summary>
-			Sono da lungo tempo appassionato di fotografia. Mi piace catturare in particolar modo paesaggi, ma anche scatti più avanzati come quelli al cielo notturno.
-		</details>
-		<details class="section bg" id="design">
-			<summary><h3>Design</h3></summary>
-			Disegnare e “immaginare cose” mi permette di dare sfogo a una creatività interiore, che mi spinge a ripensare esteticamente o tecnicamente ciò che uso. Diversi anni fa mi sono avvicinato al graphic design, e successivamente all’interface design, product design, web design, e in generale al design artistico e tecnico (anche interior, urban, transport etc).
-			<br><br>Il design è il mezzo dell'interazione tra umano e strumento, o umano e ambiente. Dev'essere quindi in un certo senso “stoico” rispetto all’utente, ma contemporaneamente consapevole del fine dell'oggetto o del sistema: cioè il design richiede attenzione e lungimiranza oltre che un buon senso estetico. Ho iniziato da piccolo a creare concept di sistemi operativi, pagine web semplici imparando l’HTML e il CSS, e occasionalmente grafiche promozionali come locandine o banner. Con il tempo ho affinato molto questa abilità, a partire da nozioni tecniche, per poi arrivare a creare design originali partendo da concetti nuovi.
-		</details>
-		<details class="section bg" id="mutset">
-			<summary><h3>Musica</h3></summary>
-			Ho iniziato ad interessarmi attivamente di musica solo da pochi anni, esplorando cioè dei generi, e provando a produrre qualcosa. In termini di gusti musicali non sono molto originale per la mia età. Ascolto perlopiù rap e hip hop, mentre per la musica strumentale, techno e house tra le altre cose.<br>Molti giudicano la musica della mia generazione come superficiale, ma non è così, infatti tra i miei artisti preferiti figurano delle penne che fanno invidia anche ad artisti internazionali. Come ogni corrente artistica se ne può dire di tutto, ma comunque si studierà nei libri di scuola.
-		</details>
-		<details class="section bg" id="world">
-			<summary><h3>Il mondo</h3></summary>
-			Intendo comprendere a fondo i meccanismi che regolano le nostre società. Ho
-			approfondito già da prima delle superiori dei temi di economia, e successivamente ho
-			maturato interesse per tutto ciò che riguarda la geopolitica, la storia, la comunicazione e
-			l'espressione culturale dei singoli individui e dei popoli. Mi appassionano, ad esempio, la
-			musica, l'architettura e la letteratura.
-		</details>
+	<h3>Alcuni dei miei interessi</h3>
+	<ul class="accordion-ani">{% for int in site.data.iluv %}
+		<details class="section bg" id="{{ int.id }}">
+			<summary><h3>{{ int.title }}</h3></summary>
+			{{ int.desc }} 
+		</details>{% endfor %}
 	</ul>
 </div>
 
 <div class="snap">
 	<h3>Attività sociali e politiche</h3>
-	<table>
-		<tr>
-			<td>2026</td>
-			<td><h4>Premio "Alessandro Leogrande" · Taranto</h4>
-			<div>Il premio "Alessandro Leogrande", intitolato a un giornalista mio concittadino scomparso
-			nel 2017, è un premio rilasciato su base annuale a libri di giornalismo narrativo.
-			Quest'anno ho partecipato alla votazione leggendo "Quando il mondo dorme" di
-			Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione.</div></td>
-			<th class="accent"><a href="/showcase/leogrande.html">Altri dettagli</a></th>
-		</tr>
-		<tr>
-			<td>2017</td>
-			<td><h4>AEDE - Ambasciatori d'Europa 2018 · Ceglie Messapica</h4>
-			<div>Primo premio "Giuseppe Tramarollo" scuole primarie e attestato di merito eccezionale.
-			L'obiettivo del concorso era immaginare un percorso attraverso il quale potesse
-			realizzarsi una vera unione europea. Ho partecipato presentando il logo e il video promo,
-			in lingua inglese, di un'ipotetica tv europea "eu 1 tv" con palinsesti che incentivassero nei
-			cittadini un sentimento di appartenenza e fratellanza europea.</div></td>
-			<th class="accent"><a>Altri dettagli</a></th>
-		</tr>
+	<table>{% for row in site.data.curriculum[2].rows %}
+		<tr>{% if row.years %}
+			<td>{{ row.years }}</td>{% endif %}
+			<td>{% if row.h %}<h4>{{ row.h }}{% if row.place %} · {{ row.place }}{% endif %}</h4>{% endif %}
+			<div>{{ row.text }}</div></td>{% if row.td %}{% for td in row.td %}
+			<th class="accent">{{td}}</th>{% endfor %}{% endif %}{% if row.link %}
+			<th class="accent"><a href="{{ row.link[1] }}">{{ row.link[0] }}</a></th>{% endif %}
+		</tr>{% endfor %}
 	</table>
 </div>
 
 <div class="snap">
 	<h3>Volontariato</h3>
-	<table>
-		<tr>
-			<td>6/2025</td>
-			<td><h4>3ª Passeggiata di Solidarietà</h4>
-			<div>Passeggiata di 4 km a sostegno del reparto di Oncoematologia Pediatrica a Taranto, con
-			destinazione Aeroporto di Grottaglie.</div></td>
-		</tr>
-		<tr>
-			<td>9/2025+</td>
-			<td><h4>OpenStreetMap</h4>
-			<div>OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal
-			2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che
-			conosco della mia zona.</div></td>
-			<th class="accent"><a href="/showcase/osm.html">Altri dettagli</a></th>
-		</tr>
-		<tr>
-			<td>3/2026</td>
-			<td><h4>Iscrizione a ADMO (Associazione Donatori di Midollo Osseo)</h4></td>
-			<th class="accent"><a href="https://admo.it/">Altri dettagli</a></th>
-		</tr>
+	<table>{% for row in site.data.curriculum[3].rows %}
+		<tr>{% if row.years %}
+			<td>{{ row.years }}</td>{% endif %}
+			<td>{% if row.h %}<h4>{{ row.h }}{% if row.place %} · {{ row.place }}{% endif %}</h4>{% endif %}
+			<div>{{ row.text }}</div></td>{% if row.td %}{% for td in row.td %}
+			<th class="accent">{{td}}</th>{% endfor %}{% endif %}{% if row.link %}
+			<th class="accent"><a href="{{ row.link[1] }}">{{ row.link[0] }}</a></th>{% endif %}
+		</tr>{% endfor %}
 	</table>
 </div>
 
 <div class="snap">
 	<h3>Relazionarsi</h3>
-	<!-- android -->
-	<table>
-		<thead>
-			<th><h3>i miei pregi</h3></th>
-			<th><h3>i miei difetti</h3></th>
-		</thead>
-		<tr>
-			<td>Creo le tabelle</td>
-			<td>Non le riempio</td>
-		</tr>
-	</table>
+	android
 </div>
 
 <!--
@@ -353,11 +271,8 @@ permalink: /cve
 
 <style>
 details.bg { background-attachment: fixed;}
-.bg#av { background-image: linear-gradient(#000b, #22cb), url(/images/interes/Av.JPG);}
-.bg#design { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
-.bg#tech { background-image: linear-gradient(#000b, #226b), url(/images/interes/echno.JPG);}
-.bg#photo { background-image: linear-gradient(#000b, #441b), url(/images/interes/camera.webp);}
-.bg#mutset { background-image: linear-gradient(#000b, #623b), url(/images/interes/kino.jpg);}
-.bg#world { background-image: linear-gradient(#000b, #299b), url(/images/interes/world.jpg);}
-.bg#sunwatch { background-image: linear-gradient(#000b, #992b), url(/images/projects/sunwatch.webp);}
+{% for int in site.data.iluv %}
+.bg#{{ int.id }} { background-image: linear-gradient(#000000bb, #{{ int.color | default: "000000" }}bb), url("{{ int.image }}");}{% endfor %}
+{% for prj in site.showcase %}{% if prj.image %}
+.bg#{{ prj.slug }} { background-image: linear-gradient(#000000bb, #{{ prj.color | default: "000000" }}bb), url("{{ prj.image }}");}{% endif %}{% endfor %}
 </style>
