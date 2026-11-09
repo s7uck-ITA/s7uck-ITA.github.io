@@ -1,13 +1,6 @@
 ---
 layout: project
-title: OpenStreetMap
-image: /images/projects/specialux.webp
-link: https://www.openstreetmap.org/user/pierfrancescop
-started: 2025-09-01
-excerpt: "OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che conosco della mia zona."
+image: /images/projects/sunwatch.webp
+started: 2024-03-17 17:55 +0100
+finished: 2024-04-25 09:45 +0200
 ---
-ciaociao
-
-inserire demo mabox
-
-inserire screenshos lavori

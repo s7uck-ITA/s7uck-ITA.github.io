@@ -12,8 +12,11 @@ body {
 	max-width: 110ch;
 	margin: 0 auto;
 }
-header, footer {
+header, footer, body>article {
 	padding: 1em;
+}
+header, footer {
+	text-align: center;
 	align-items: center;
 	justify-content: center;
 }
@@ -145,6 +148,11 @@ table, td, th {
 th { background-color: #101010bb;}
 td, section, button, summary { position: relative;}
 .timestamp { color: yellowgreen; text-align: right;}
+td>div {
+	max-height: 9ch;
+	overflow-y: scroll;
+}
+section>h3, section>header h3, .bg h3 { color: white;}
 .icon, menu img {
 	max-height: 1em;
 	vertical-align: middle;

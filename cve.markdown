@@ -30,13 +30,17 @@ permalink: /cve
 	}
 </style>
 
-<style media="(min-width: 920px)">
+<style media="(min-width: 160ch)">	
 	body>header, body>footer {
 		height: 100vh;
 		position: sticky;
 		top: 0;
 	}
 	body.horizontal { flex-wrap: nowrap;}
+</style>
+
+<style media="(max-width: 920px)">
+	main { padding: 1em;}
 </style>
 
 <header>
@@ -204,8 +208,8 @@ permalink: /cve
 
 <div class="snap">
 	<h3>Portfolio</h3>
-	<ul class="scroll coverflow">
-		<section>
+	<ul class="scroll snap coverflow">
+		<section class="snap" id="osm">
 			<img class="ily" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" width=80>
 			<header class="fully-spaced">
 			<h3>OpenStreetMap</h3>
@@ -214,20 +218,22 @@ permalink: /cve
 			OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal 2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che
 			conosco della mia zona.
 		</section>
-		<section>
+		<section class="snap" id="special ux">
 			<header class="fully-spaced">
 			<h3>Special UX</h3>
 			<a class="button" href="/showcase/specialux.html">Altri dettagli</a>
 			</header>
 			Il mio concept UI più dettagliato e sperimentale. È pensato da zero per essere prevedibile e innovativo al tempo stesso.
 		</section>
-		<section>
+		<section class="snap bg" id="sunwatch">
+			<img class="ily" src="/images/projects/sunwatch-logo.png" width=80>
 			<header class="fully-spaced">
 			<h3>SunWatch</h3>
 			<a class="button" href="/showcase/sunwatch.html">Altri dettagli</a>
 			</header>
 		</section>
-		<section>
+		<section class="snap" id="crystal">
+			<img class="ily" src="/images/projects/Logo.png" width=80>
 			<header class="fully-spaced">
 			<h3>Crystal Browser</h3>
 			<a class="button" href="/showcase/crystal.html">Altri dettagli</a>
@@ -278,20 +284,20 @@ permalink: /cve
 		<tr>
 			<td>2026</td>
 			<td><h4>Premio "Alessandro Leogrande" · Taranto</h4>
-			Il premio "Alessandro Leogrande", intitolato a un giornalista mio concittadino scomparso
+			<div>Il premio "Alessandro Leogrande", intitolato a un giornalista mio concittadino scomparso
 			nel 2017, è un premio rilasciato su base annuale a libri di giornalismo narrativo.
 			Quest'anno ho partecipato alla votazione leggendo "Quando il mondo dorme" di
-			Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione.</td>
+			Francesca Albanese, relatrice ONU per la questione palestinese, e ho contribuito nel mio piccolo alla sua premiazione.</div></td>
 			<th class="accent"><a href="/showcase/leogrande.html">Altri dettagli</a></th>
 		</tr>
 		<tr>
 			<td>2017</td>
 			<td><h4>AEDE - Ambasciatori d'Europa 2018 · Ceglie Messapica</h4>
-			Primo premio "Giuseppe Tramarollo" scuole primarie e attestato di merito eccezionale.
+			<div>Primo premio "Giuseppe Tramarollo" scuole primarie e attestato di merito eccezionale.
 			L'obiettivo del concorso era immaginare un percorso attraverso il quale potesse
 			realizzarsi una vera unione europea. Ho partecipato presentando il logo e il video promo,
 			in lingua inglese, di un'ipotetica tv europea "eu 1 tv" con palinsesti che incentivassero nei
-			cittadini un sentimento di appartenenza e fratellanza europea.</td>
+			cittadini un sentimento di appartenenza e fratellanza europea.</div></td>
 			<th class="accent"><a>Altri dettagli</a></th>
 		</tr>
 	</table>
@@ -303,15 +309,15 @@ permalink: /cve
 		<tr>
 			<td>6/2025</td>
 			<td><h4>3ª Passeggiata di Solidarietà</h4>
-			Passeggiata di 4 km a sostegno del reparto di Oncoematologia Pediatrica a Taranto, con
-			destinazione Aeroporto di Grottaglie.</td>
+			<div>Passeggiata di 4 km a sostegno del reparto di Oncoematologia Pediatrica a Taranto, con
+			destinazione Aeroporto di Grottaglie.</div></td>
 		</tr>
 		<tr>
 			<td>9/2025+</td>
 			<td><h4>OpenStreetMap</h4>
-			OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal
+			<div>OpenStreetMap è una mappa del mondo libera all'uso e apertamente modiﬁcabile. Dal
 			2025 modifico assiduamente la mappa tentando il più possibile di completarla con ciò che
-			conosco della mia zona.</td>
+			conosco della mia zona.</div></td>
 			<th class="accent"><a href="/showcase/osm.html">Altri dettagli</a></th>
 		</tr>
 		<tr>
@@ -368,7 +374,6 @@ permalink: /cve
 </footer-->
 
 <style>
-.bg h3 { color: white;}
 details.bg { background-attachment: fixed;}
 .bg#av { background-image: linear-gradient(#000b, #22cb), url(/images/interes/Av.JPG);}
 .bg#design { background-image: linear-gradient(#000b, #4a5b), url(/images/interes/kino.jpg);}
@@ -376,4 +381,5 @@ details.bg { background-attachment: fixed;}
 .bg#photo { background-image: linear-gradient(#000b, #441b), url(/images/interes/camera.webp);}
 .bg#mutset { background-image: linear-gradient(#000b, #623b), url(/images/interes/kino.jpg);}
 .bg#world { background-image: linear-gradient(#000b, #299b), url(/images/interes/world.jpg);}
+.bg#sunwatch { background-image: linear-gradient(#000b, #992b), url(/images/projects/sunwatch.webp);}
 </style>

@@ -2,31 +2,29 @@
 layout: default
 ---
 
-<header>
-    {% include nav.html %}
+<style>
+	.bg { background-image: linear-gradient(#992b, #000b), url("{{ page.image }}");}
+</style>
+
+<header class="section hero bg">
+	<h1 class="hero">{{ page.title }}</h1>
 </header>
+<div class="gridlock">
+<section>
+    {% include nav.html %}
+</section>
+<header class="section">
+	{% if page.started != false %}<span>dal <time datetime="{{ page.started }}">{{ page.started | date: "%-d %b %Y" }}</time>{% if page.finished %} al <time datetime="{{ page.finished }}">{{ page.finished | date: "%-d %b %Y" }}</time></span>{% endif %}
+	{% else %}work in progress{% endif %}
+
+	{% if page.link %}
+	<a class="button" href="{{ page.link }}" title="Link">
+		<span>{{ page.link | split: '://' | last }} </span>
+		<img src="/images/forward.svg">
+	</a>{% endif %}
+</header>
+</div>
 
 <article>
-    <header>
-    	{% if page.started != false %}<span>dal <time datetime="{{ page.started }}">{{ page.started | date: "%-d %b %Y" }}</time>{% if page.finished %} al <time datetime="{{ page.finished }}">{{ page.finished | date: "%-d %b %Y" }}</time></span>{% endif %}
-    	{% else %}work in progress{% endif %}
-        <h1>{{ page.title }}</h1>
-
-		{% if page.link %}
-		<a class="button" href="{{ page.link }}" title="Link">
-			<span>{{ page.link | split: '://' | last }} </span>
-			<img src="/images/forward.svg">
-		</a>{% endif %}
-	    </header>
-
-    {% if page.image %}
-    <figure class="full-width cover" style="background-image: url({{ page.image }});">
-    </figure>
-    {% endif %}
-
-    <center>
-		{{ page.excerpt }}
-	</center>
-
-	{{ content | replace: page.excerpt, "" }}
+	{{ content }}
 </article>
