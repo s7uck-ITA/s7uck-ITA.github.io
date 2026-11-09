@@ -1,0 +1,67 @@
+- id: av
+  title: Aviazione
+  color: 2222cc
+  image: "/images/interes/Av.JPG"
+  desc: >-
+    Tutto ciò che vola fa i miei sogni fin da quando ero piccolo. 
+
+- id: tech
+  title: Tecnologia e Informatica
+  color: 222266
+  image: "/images/interes/echno.JPG"
+  desc: >-
+    Ho imparato da autodidatta negli anni a usare professionalmente il computer per
+    programmazione, graﬁca, video editing e creazione siti web.
+
+- id: photo
+  title: Fotografia
+  color: 444411
+  image: "/images/interes/camera.webp"
+  desc: >-
+    Sono da lungo tempo appassionato di fotografia. Mi piace catturare in particolar modo
+    paesaggi, ma anche scatti più avanzati come quelli al cielo notturno.
+
+- id: design
+  title: Design
+  color: 44aa55
+  image: "/images/interes/kino.jpg"
+  desc: >-
+    Disegnare e “immaginare cose” mi permette di dare sfogo a una creatività interiore, che mi
+    spinge a ripensare esteticamente o tecnicamente ciò che uso. Diversi anni fa mi sono
+    avvicinato al graphic design, e successivamente all’interface design, product design, web
+    design, e in generale al design artistico e tecnico (anche interior, urban, transport etc).
+
+    Il design è il mezzo dell'interazione tra umano e strumento, o umano e ambiente.
+    Dev'essere quindi in un certo senso “stoico” rispetto all’utente, ma contemporaneamente
+    consapevole del fine dell'oggetto o del sistema: cioè il design richiede attenzione e
+    lungimiranza oltre che un buon senso estetico. Ho iniziato da piccolo a creare concept di
+    sistemi operativi, pagine web semplici imparando l’HTML e il CSS, e occasionalmente
+    grafiche promozionali come locandine o banner. Con il tempo ho affinato molto questa
+    abilità, a partire da nozioni tecniche, per poi arrivare a creare design originali partendo
+    da concetti nuovi.
+
+- id: mutset
+  title: Musica
+  color: 662233
+  image: "/images/interes/kino.jpg"
+  desc: >-
+    Ho iniziato ad interessarmi attivamente di musica solo da pochi anni, esplorando cioè dei
+    generi, e provando a produrre qualcosa. In termini di gusti musicali non sono molto
+    originale per la mia età. Ascolto perlopiù rap e hip hop, mentre per la musica strumentale,
+    techno e house tra le altre cose.
+
+    Molti giudicano la musica della mia generazione come
+    superficiale, ma non è così, infatti tra i miei artisti preferiti figurano delle penne che
+    fanno invidia anche ad artisti internazionali. Come ogni corrente artistica se ne può dire
+    di tutto, ma comunque si studierà nei libri di scuola.
+
+- id: world
+  title: Il mondo
+  color: 229999
+  image: "/images/interes/world.jpg"
+  desc: >-
+    Intendo comprendere a fondo i meccanismi che regolano le nostre società. Ho
+    approfondito già da prima delle superiori dei temi di economia, e successivamente ho
+    maturato interesse per tutto ciò che riguarda la geopolitica, la storia, la comunicazione e
+    l'espressione culturale dei singoli individui e dei popoli. Mi appassionano, ad esempio, la
+    musica, l'architettura e la letteratura.
